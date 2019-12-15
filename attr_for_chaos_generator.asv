@@ -1,0 +1,67 @@
+tau_p_1 = 1.65;
+tau_p_2 = 1.65;
+tau_z_1 = 165;
+tau_z_2 = 165;
+omega_0 = 0;
+G_0 = 90.8;
+      
+
+% syms teta(t);
+% ode = [  diff(teta(1),t) == teta(2);
+%         diff(teta(2),t) == teta(3);
+%         diff(teta(3),t) == (- (tau_p_1 + tau_p_2 + tau_z_1*tau_z_2*G_0*cos(teta(1)))*diff(teta,t) - (1 + G_0*(tau_z_1 + tau_z_2)*cos(teta(1)))*diff(teta,t) - (- tau_z_1*tau_z_2*G_0*sin(teta(1)))*(diff(teta,t))^2 - (G_0 * sin(teta(1))) + f)/a]; 
+% Sol = dsolve(ode)
+
+
+syms Y(t) X(t) Z(t) teta(t)    
+a = tau_p_1 * tau_p_2;
+b = tau_p_1 + tau_p_2 + tau_z_1*tau_z_2*G_0*cos(teta);
+c = 1 + G_0*(tau_z_1 + tau_z_2)*cos(teta);
+d = - tau_z_1*tau_z_2*G_0*sin(teta);
+e = G_0 * sin(teta);
+f = omega_0;
+[V] = odeToVectorField(a*diff(teta,3) + b*diff(teta,2) + c*diff(teta) + d*diff(teta)^2 + e == f)
+
+% T = [diff(X) == Y;diff(Y) == Z;diff(Z) == 908000*sin(X)*Y^2 - (36320*sin(X))/1089 - (400*Y*(29964*cos(X) + 1))/1089 - (400*Z*(2472030*cos(X) + 33/10))/1089]
+% T = [ Y; Z; 908000*sin(X)*Y^2 - (36320*sin(X))/1089 - (400*Y*(29964*cos(X) + 1))/1089 - (400*Z*(2472030*cos(X) + 33/10))/1089]
+
+M = matlabFunction(V,'vars', {'t','Y'})
+
+sol = ode45(M,[0 10],[1 1 1])
+% sol = dsolve(T)
+% sol.x
+% sol.y
+fplot(@(x)deval(sol,x,1), [0, ])
+
+% syms V_PD
+% V_PD = K_p*sin(sol);
+% V_c = (-diff(sol,t))/K_p;
+
+%     
+    %------------------------------------------------------------------
+    
+    function y = exer(t)
+        y = [1,1,1];
+    end
+    
+    %------------------------------------------------------------------
+    
+    function dydt = ddefun(y)
+        tau_p_1 = 1.65;
+        tau_p_2 = 1.65;
+        tau_z_1 = 165;
+        tau_z_2 = 165;
+        omega_0 = 0;
+        G_0 = 90.8;
+        
+        a = tau_p_1 *tau_p_2;
+        b = tau_p_1 + tau_p_2 + tau_z_1*tau_z_2*G_0*cos(y(1));
+        c = 1 + G_0*(tau_z_1 + tau_z_2)*cos(y(1));
+        d = tau_z_1*tau_z_2*G_0*sin(y(1));
+        f = G_0 * sin(y(1));
+        g = omega_0;
+        
+        dydt = [  y(2)
+            y(3)
+            (-b*y(3) - c*y(2) - d*y(2)^2 - f + g)/a];
+    end
