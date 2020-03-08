@@ -4,21 +4,31 @@ clear
 global pi Ac fc kf;
 % Constants
 
+tau_p1 = 1.65;
+tau_p2 = 1.65;
+tau_z1 = 165;
+tau_z2 = 165;
 pi = 3.14;
 
 
 % For FM mode
 
 Ac = 1; % Amplitude frequency
-fc = 36; % center frequ
+fc = 36; % center frequency
 kf = 7.8; % gain of the modulator -> so that RF bandwidth of the FM-DCSK siganl is 17 when the chip rate is 20
+Tau = 100; %time of generation
+T = 2; % bit duration
+T_b = 40; %random for now; period for dcsk
+G_0 = 10;
 
 K = 3;
 
-T = 2;
 R = 9;
 
-Au0 = 12;
+A_u0 = 12;
+Tb = T/2;
+K_v = 12;
+K_p = 12;
 
 
 
