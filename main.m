@@ -44,6 +44,14 @@ function [y] = FM_sin(m)
     y = Ac*sin(2*pi*(fc*t + kf*integral(m, 0, t)));
 end
 
+function [y] = fun(y, t, y_0)
+    if mod(t, 40) == 0
+        return y;
+    end
+    return y_0;
+        
+end
+
 
 function [V_PD] = app(teta_e)
     V_PD = K_p*sin(teta_e);
@@ -55,7 +63,7 @@ function [Vc] = F(teta_e)
 end
 
 function [teta_0] = app_2(V_C)
-    teeta_0 = K_V/V_C
+    teta_0 = K_V/V_C
 end
 
 
