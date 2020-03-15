@@ -84,7 +84,7 @@ ewcbusxpqt [ 2 ] ; } XDot ; typedef struct { boolean_T fipgb2dv5w ; boolean_T
 ewcbusxpqt [ 2 ] ; } XDis ; typedef struct { real_T fipgb2dv5w ; real_T
 ewcbusxpqt [ 2 ] ; } CStateAbsTol ; typedef struct { rtwCAPI_ModelMappingInfo
 mmi ; } DataMapInfo ; struct P_ { real_T K ; real_T K_p ; real_T T_b ; real_T
-omega_0 ; real_T AWGNChannel1_EbNodB ; real_T AWGNChannel_EbNodB ; real_T
+w_r ; real_T AWGNChannel1_EbNodB ; real_T AWGNChannel_EbNodB ; real_T
 RandomSource_MeanVal ; real_T RandomSource_MeanVal_g055kln1nb ; real_T
 AWGNChannel1_Ps ; real_T AWGNChannel_Ps ; uint32_T AWGNChannel1_seed ;
 uint32_T AWGNChannel_seed ; real_T Constant_Value ; real_T
@@ -107,23 +107,22 @@ RandomSource_VarianceRTP_kadmsoaacu ; real_T
 VariableTimeDelay_MaxDelay_dusxlj4oib ; real_T
 VariableTimeDelay_InitOutput_nbhpmtp2jg ; real_T
 DiscreteFIRFilter_InitialStates_bcwzpsb0dc ; real_T
-DiscreteFIRFilter_Coefficients_mbm3buv1vn [ 10 ] ; real_T Constant3_Value ;
-int32_T Gain_Gain ; int32_T Bias_Bias ; int32_T Gain1_Gain ; uint8_T
-Gain2_Gain ; } ; extern const char * RT_MEMORY_ALLOCATION_ERROR ; extern B
-rtB ; extern X rtX ; extern DW rtDW ; extern P rtP ; extern const
-rtwCAPI_ModelMappingStaticInfo * graduteWork_GetCAPIStaticMap ( void ) ;
-extern SimStruct * const rtS ; extern const int_T gblNumToFiles ; extern
-const int_T gblNumFrFiles ; extern const int_T gblNumFrWksBlocks ; extern
-rtInportTUtable * gblInportTUtables ; extern const char * gblInportFileName ;
-extern const int_T gblNumRootInportBlks ; extern const int_T
-gblNumModelInputs ; extern const int_T gblInportDataTypeIdx [ ] ; extern
-const int_T gblInportDims [ ] ; extern const int_T gblInportComplex [ ] ;
-extern const int_T gblInportInterpoFlag [ ] ; extern const int_T
-gblInportContinuous [ ] ; extern const int_T gblParameterTuningTid ; extern
-DataMapInfo * rt_dataMapInfoPtr ; extern rtwCAPI_ModelMappingInfo *
-rt_modelMapInfoPtr ; void MdlOutputs ( int_T tid ) ; void
-MdlOutputsParameterSampleTime ( int_T tid ) ; void MdlUpdate ( int_T tid ) ;
-void MdlTerminate ( void ) ; void MdlInitializeSizes ( void ) ; void
+DiscreteFIRFilter_Coefficients_mbm3buv1vn [ 10 ] ; int32_T Gain_Gain ;
+int32_T Bias_Bias ; int32_T Gain1_Gain ; uint8_T Gain2_Gain ; } ; extern
+const char * RT_MEMORY_ALLOCATION_ERROR ; extern B rtB ; extern X rtX ;
+extern DW rtDW ; extern P rtP ; extern const rtwCAPI_ModelMappingStaticInfo *
+graduteWork_GetCAPIStaticMap ( void ) ; extern SimStruct * const rtS ; extern
+const int_T gblNumToFiles ; extern const int_T gblNumFrFiles ; extern const
+int_T gblNumFrWksBlocks ; extern rtInportTUtable * gblInportTUtables ; extern
+const char * gblInportFileName ; extern const int_T gblNumRootInportBlks ;
+extern const int_T gblNumModelInputs ; extern const int_T
+gblInportDataTypeIdx [ ] ; extern const int_T gblInportDims [ ] ; extern
+const int_T gblInportComplex [ ] ; extern const int_T gblInportInterpoFlag [
+] ; extern const int_T gblInportContinuous [ ] ; extern const int_T
+gblParameterTuningTid ; extern DataMapInfo * rt_dataMapInfoPtr ; extern
+rtwCAPI_ModelMappingInfo * rt_modelMapInfoPtr ; void MdlOutputs ( int_T tid )
+; void MdlOutputsParameterSampleTime ( int_T tid ) ; void MdlUpdate ( int_T
+tid ) ; void MdlTerminate ( void ) ; void MdlInitializeSizes ( void ) ; void
 MdlInitializeSampleTimes ( void ) ; SimStruct * raccel_register_model ( void
 ) ;
 #endif

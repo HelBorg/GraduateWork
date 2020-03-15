@@ -43,7 +43,7 @@
 	  section.data(3).logicalSrcIdx = 2;
 	  section.data(3).dtTransOffset = 2;
 	
-	  ;% rtP.omega_0
+	  ;% rtP.w_r
 	  section.data(4).logicalSrcIdx = 3;
 	  section.data(4).dtTransOffset = 3;
 	
@@ -90,8 +90,8 @@
       paramMap.sections(2) = section;
       clear section
       
-      section.nData     = 34;
-      section.data(34)  = dumData; %prealloc
+      section.nData     = 33;
+      section.data(33)  = dumData; %prealloc
       
 	  ;% rtP.Constant_Value
 	  section.data(1).logicalSrcIdx = 12;
@@ -225,10 +225,6 @@
 	  section.data(33).logicalSrcIdx = 44;
 	  section.data(33).dtTransOffset = 43;
 	
-	  ;% rtP.Constant3_Value
-	  section.data(34).logicalSrcIdx = 45;
-	  section.data(34).dtTransOffset = 53;
-	
       nTotData = nTotData + section.nData;
       paramMap.sections(3) = section;
       clear section
@@ -237,15 +233,15 @@
       section.data(3)  = dumData; %prealloc
       
 	  ;% rtP.Gain_Gain
-	  section.data(1).logicalSrcIdx = 46;
+	  section.data(1).logicalSrcIdx = 45;
 	  section.data(1).dtTransOffset = 0;
 	
 	  ;% rtP.Bias_Bias
-	  section.data(2).logicalSrcIdx = 47;
+	  section.data(2).logicalSrcIdx = 46;
 	  section.data(2).dtTransOffset = 1;
 	
 	  ;% rtP.Gain1_Gain
-	  section.data(3).logicalSrcIdx = 48;
+	  section.data(3).logicalSrcIdx = 47;
 	  section.data(3).dtTransOffset = 2;
 	
       nTotData = nTotData + section.nData;
@@ -256,7 +252,7 @@
       section.data(1)  = dumData; %prealloc
       
 	  ;% rtP.Gain2_Gain
-	  section.data(1).logicalSrcIdx = 49;
+	  section.data(1).logicalSrcIdx = 48;
 	  section.data(1).dtTransOffset = 0;
 	
       nTotData = nTotData + section.nData;
@@ -748,8 +744,8 @@
   ;%
 
 
-  targMap.checksum0 = 4170770201;
-  targMap.checksum1 = 232831895;
-  targMap.checksum2 = 2260892825;
-  targMap.checksum3 = 3417646548;
+  targMap.checksum0 = 1893728671;
+  targMap.checksum1 = 295662189;
+  targMap.checksum2 = 3154996807;
+  targMap.checksum3 = 3160123458;
 

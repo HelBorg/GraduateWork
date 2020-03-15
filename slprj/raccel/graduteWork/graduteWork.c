@@ -273,26 +273,25 @@ void * ) & pBuffer [ 0 ] ; rtDW . lhx0lj4i05 . TUbufferPtrs [ 1 ] = ( void *
 MdlOutputs ( int_T tid ) { real_T dxpj2fdqxb ; real_T om12obuajo ; real_T
 n0h4b1vry4 ; real_T degbbw0sgw ; real_T * lastU ; int32_T j ; real_T
 taskTimeV ; real_T ratio ; uint32_T numCycles ; boolean_T oop02asj1s ; real_T
-bhhm3g5dhx ; real_T b2ck0lyshm ; rtB . euqkdgostn = rtP . omega_0 * ssGetT (
-rtS ) ; rtB . a4xfolphoz = 0.0 ; rtB . a4xfolphoz += rtP . TransferFcn1_C *
-rtX . fipgb2dv5w ; rtB . ngd20rywmn = ( rtP . Constant3_Value + rtB .
-euqkdgostn ) - rtB . a4xfolphoz ; rtB . nsv3wpjgsy = rtP . K_p *
-muDoubleScalarSin ( rtB . ngd20rywmn ) ; if ( ( rtDW . gidxstxvag >= ssGetT (
-rtS ) ) && ( rtDW . hrgwoqkxsi >= ssGetT ( rtS ) ) ) { rtB . nn4m2ue31i = 0.0
-; } else { taskTimeV = rtDW . gidxstxvag ; lastU = & rtDW . ewu2ifjblb ; if (
-rtDW . gidxstxvag < rtDW . hrgwoqkxsi ) { if ( rtDW . hrgwoqkxsi < ssGetT (
-rtS ) ) { taskTimeV = rtDW . hrgwoqkxsi ; lastU = & rtDW . hqrrzfrnm4 ; } }
-else { if ( rtDW . gidxstxvag >= ssGetT ( rtS ) ) { taskTimeV = rtDW .
-hrgwoqkxsi ; lastU = & rtDW . hqrrzfrnm4 ; } } rtB . nn4m2ue31i = ( rtB .
-nsv3wpjgsy - * lastU ) / ( ssGetT ( rtS ) - taskTimeV ) ; } rtB . fmn00c1djj
-= 0.0 ; rtB . fmn00c1djj += rtP . TransferFcn_C [ 0 ] * rtX . ewcbusxpqt [ 0
-] ; rtB . fmn00c1djj += rtP . TransferFcn_C [ 1 ] * rtX . ewcbusxpqt [ 1 ] ;
-rtB . fmn00c1djj += rtP . TransferFcn_D * rtB . nsv3wpjgsy ; taskTimeV = rtP
-. T_b / 2.0 ; { real_T * * uBuffer = ( real_T * * ) & rtDW . fqydmkxc1f .
-TUbufferPtrs [ 0 ] ; real_T * * tBuffer = ( real_T * * ) & rtDW . fqydmkxc1f
-. TUbufferPtrs [ 1 ] ; real_T simTime = ssGetT ( rtS ) ; real_T appliedDelay
-; appliedDelay = taskTimeV ; if ( appliedDelay > rtP .
-VariableTimeDelay1_MaxDelay ) { appliedDelay = rtP .
+bhhm3g5dhx ; real_T b2ck0lyshm ; rtB . euqkdgostn = rtP . w_r * ssGetT ( rtS
+) ; rtB . a4xfolphoz = 0.0 ; rtB . a4xfolphoz += rtP . TransferFcn1_C * rtX .
+fipgb2dv5w ; rtB . ngd20rywmn = rtB . euqkdgostn - rtB . a4xfolphoz ; rtB .
+nsv3wpjgsy = rtP . K_p * muDoubleScalarSin ( rtB . ngd20rywmn ) ; if ( ( rtDW
+. gidxstxvag >= ssGetT ( rtS ) ) && ( rtDW . hrgwoqkxsi >= ssGetT ( rtS ) ) )
+{ rtB . nn4m2ue31i = 0.0 ; } else { taskTimeV = rtDW . gidxstxvag ; lastU = &
+rtDW . ewu2ifjblb ; if ( rtDW . gidxstxvag < rtDW . hrgwoqkxsi ) { if ( rtDW
+. hrgwoqkxsi < ssGetT ( rtS ) ) { taskTimeV = rtDW . hrgwoqkxsi ; lastU = &
+rtDW . hqrrzfrnm4 ; } } else { if ( rtDW . gidxstxvag >= ssGetT ( rtS ) ) {
+taskTimeV = rtDW . hrgwoqkxsi ; lastU = & rtDW . hqrrzfrnm4 ; } } rtB .
+nn4m2ue31i = ( rtB . nsv3wpjgsy - * lastU ) / ( ssGetT ( rtS ) - taskTimeV )
+; } rtB . fmn00c1djj = 0.0 ; rtB . fmn00c1djj += rtP . TransferFcn_C [ 0 ] *
+rtX . ewcbusxpqt [ 0 ] ; rtB . fmn00c1djj += rtP . TransferFcn_C [ 1 ] * rtX
+. ewcbusxpqt [ 1 ] ; rtB . fmn00c1djj += rtP . TransferFcn_D * rtB .
+nsv3wpjgsy ; taskTimeV = rtP . T_b / 2.0 ; { real_T * * uBuffer = ( real_T *
+* ) & rtDW . fqydmkxc1f . TUbufferPtrs [ 0 ] ; real_T * * tBuffer = ( real_T
+* * ) & rtDW . fqydmkxc1f . TUbufferPtrs [ 1 ] ; real_T simTime = ssGetT (
+rtS ) ; real_T appliedDelay ; appliedDelay = taskTimeV ; if ( appliedDelay >
+rtP . VariableTimeDelay1_MaxDelay ) { appliedDelay = rtP .
 VariableTimeDelay1_MaxDelay ; } if ( appliedDelay < 0.0 ) { appliedDelay =
 0.0 ; } dxpj2fdqxb = rt_TDelayInterpolate ( simTime - appliedDelay , 0.0 , *
 tBuffer , * uBuffer , rtDW . n3mlm25bwm . CircularBufSize , & rtDW .
@@ -543,8 +542,8 @@ slioCatalogueAddr ) ; * slioCatalogueAddr = NULL ; } } void
 MdlInitializeSizes ( void ) { ssSetNumContStates ( rtS , 3 ) ;
 ssSetNumPeriodicContStates ( rtS , 0 ) ; ssSetNumY ( rtS , 0 ) ; ssSetNumU (
 rtS , 0 ) ; ssSetDirectFeedThrough ( rtS , 0 ) ; ssSetNumSampleTimes ( rtS ,
-7 ) ; ssSetNumBlocks ( rtS , 62 ) ; ssSetNumBlockIO ( rtS , 21 ) ;
-ssSetNumBlockParams ( rtS , 70 ) ; } void MdlInitializeSampleTimes ( void ) {
+7 ) ; ssSetNumBlocks ( rtS , 61 ) ; ssSetNumBlockIO ( rtS , 21 ) ;
+ssSetNumBlockParams ( rtS , 69 ) ; } void MdlInitializeSampleTimes ( void ) {
 ssSetSampleTime ( rtS , 0 , 0.0 ) ; ssSetSampleTime ( rtS , 1 , 0.0 ) ;
 ssSetSampleTime ( rtS , 2 , 40.0 ) ; ssSetSampleTime ( rtS , 3 , - 2.0 ) ;
 ssSetSampleTime ( rtS , 4 , - 2.0 ) ; ssSetSampleTime ( rtS , 5 , - 2.0 ) ;
@@ -552,9 +551,9 @@ ssSetSampleTime ( rtS , 6 , - 2.0 ) ; ssSetOffsetTime ( rtS , 0 , 0.0 ) ;
 ssSetOffsetTime ( rtS , 1 , 1.0 ) ; ssSetOffsetTime ( rtS , 2 , 0.0 ) ;
 ssSetOffsetTime ( rtS , 3 , 0.0 ) ; ssSetOffsetTime ( rtS , 4 , 1.0 ) ;
 ssSetOffsetTime ( rtS , 5 , 2.0 ) ; ssSetOffsetTime ( rtS , 6 , 3.0 ) ; }
-void raccel_set_checksum ( ) { ssSetChecksumVal ( rtS , 0 , 4170770201U ) ;
-ssSetChecksumVal ( rtS , 1 , 232831895U ) ; ssSetChecksumVal ( rtS , 2 ,
-2260892825U ) ; ssSetChecksumVal ( rtS , 3 , 3417646548U ) ; }
+void raccel_set_checksum ( ) { ssSetChecksumVal ( rtS , 0 , 1893728671U ) ;
+ssSetChecksumVal ( rtS , 1 , 295662189U ) ; ssSetChecksumVal ( rtS , 2 ,
+3154996807U ) ; ssSetChecksumVal ( rtS , 3 , 3160123458U ) ; }
 #if defined(_MSC_VER)
 #pragma optimize( "", off )
 #endif
@@ -635,9 +634,9 @@ ssSetSolverShapePreserveControl ( rtS , 2 ) ; ssSetTNextTid ( rtS , INT_MIN )
 ; ssSetTNext ( rtS , rtMinusInf ) ; ssSetSolverNeedsReset ( rtS ) ;
 ssSetNumNonsampledZCs ( rtS , 0 ) ; ssSetContStateDisabled ( rtS ,
 contStatesDisabled ) ; ssSetSolverMaxConsecutiveMinStep ( rtS , 1 ) ; }
-ssSetChecksumVal ( rtS , 0 , 4170770201U ) ; ssSetChecksumVal ( rtS , 1 ,
-232831895U ) ; ssSetChecksumVal ( rtS , 2 , 2260892825U ) ; ssSetChecksumVal
-( rtS , 3 , 3417646548U ) ; { static const sysRanDType rtAlwaysEnabled =
+ssSetChecksumVal ( rtS , 0 , 1893728671U ) ; ssSetChecksumVal ( rtS , 1 ,
+295662189U ) ; ssSetChecksumVal ( rtS , 2 , 3154996807U ) ; ssSetChecksumVal
+( rtS , 3 , 3160123458U ) ; { static const sysRanDType rtAlwaysEnabled =
 SUBSYS_RAN_BC_ENABLE ; static RTWExtModeInfo rt_ExtModeInfo ; static const
 sysRanDType * systemRan [ 3 ] ; gblRTWExtModeInfo = & rt_ExtModeInfo ;
 ssSetRTWExtModeInfo ( rtS , & rt_ExtModeInfo ) ;

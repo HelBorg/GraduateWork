@@ -31,6 +31,6 @@ eihuvcejq2 ) , 8 , 0 , 5 } } ; static DataTypeTransitionTable rtBTransTable =
 { 11U , rtBTransitions } ; static DataTypeTransition rtPTransitions [ ] = { {
 ( char_T * ) ( & rtP . K ) , 0 , 0 , 10 } , { ( char_T * ) ( & rtP .
 AWGNChannel1_seed ) , 7 , 0 , 2 } , { ( char_T * ) ( & rtP . Constant_Value )
-, 0 , 0 , 54 } , { ( char_T * ) ( & rtP . Gain_Gain ) , 6 , 0 , 3 } , { (
+, 0 , 0 , 53 } , { ( char_T * ) ( & rtP . Gain_Gain ) , 6 , 0 , 3 } , { (
 char_T * ) ( & rtP . Gain2_Gain ) , 14 , 0 , 1 } } ; static
 DataTypeTransitionTable rtPTransTable = { 5U , rtPTransitions } ;
