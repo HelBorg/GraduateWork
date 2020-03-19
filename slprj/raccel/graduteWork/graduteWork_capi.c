@@ -33,117 +33,142 @@ TARGET_STRING ( "graduteWork/Gain1" ) , TARGET_STRING ( "" ) , 0 , 0 , 0 , 0
 ) , 0 , 1 , 0 , 1 , 1 } , { 3 , 0 , TARGET_STRING ( "graduteWork/Product" ) ,
 TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 0 } , { 4 , 0 , TARGET_STRING (
 "graduteWork/Product1" ) , TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 0 } , { 5 ,
-0 , TARGET_STRING ( "graduteWork/APLL /Derivative" ) , TARGET_STRING ( "" ) ,
-0 , 0 , 0 , 0 , 0 } , { 6 , 0 , TARGET_STRING ( "graduteWork/APLL /Gain" ) ,
+0 , TARGET_STRING ( "graduteWork/APLL /Clock" ) , TARGET_STRING ( "" ) , 0 ,
+0 , 0 , 0 , 0 } , { 6 , 0 , TARGET_STRING ( "graduteWork/APLL /Gain" ) ,
 TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 0 } , { 7 , 0 , TARGET_STRING (
 "graduteWork/APLL /Gain1" ) , TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 0 } , {
-8 , 0 , TARGET_STRING ( "graduteWork/APLL /Sum" ) , TARGET_STRING ( "" ) , 0
-, 0 , 0 , 0 , 0 } , { 9 , 0 , TARGET_STRING (
-"graduteWork/APLL /Transfer Fcn" ) , TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 0
-} , { 10 , 0 , TARGET_STRING ( "graduteWork/APLL /Transfer Fcn1" ) ,
-TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 0 } , { 11 , 0 , TARGET_STRING (
-"graduteWork/AWGN Channel/Dynamic AWGN" ) , TARGET_STRING ( "" ) , 0 , 0 , 0
-, 0 , 2 } , { 12 , 0 , TARGET_STRING (
+8 , 0 , TARGET_STRING ( "graduteWork/APLL /Gain2" ) , TARGET_STRING ( "" ) ,
+0 , 0 , 0 , 0 , 0 } , { 9 , 0 , TARGET_STRING ( "graduteWork/APLL /Sum" ) ,
+TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 0 } , { 10 , 0 , TARGET_STRING (
+"graduteWork/APLL /Sum1" ) , TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 0 } , {
+11 , 0 , TARGET_STRING ( "graduteWork/APLL /Transfer Fcn" ) , TARGET_STRING (
+"" ) , 0 , 0 , 0 , 0 , 0 } , { 12 , 0 , TARGET_STRING (
+"graduteWork/APLL /Transfer Fcn1" ) , TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 ,
+0 } , { 13 , 0 , TARGET_STRING ( "graduteWork/AWGN Channel/Dynamic AWGN" ) ,
+TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 2 } , { 14 , 0 , TARGET_STRING (
 "graduteWork/AWGN Channel1/Dynamic AWGN" ) , TARGET_STRING ( "" ) , 0 , 0 , 0
-, 0 , 2 } , { 13 , 0 , TARGET_STRING ( "graduteWork/DCSK_mod/Pulse Generator"
-) , TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 3 } , { 14 , 0 , TARGET_STRING (
+, 0 , 2 } , { 15 , 0 , TARGET_STRING ( "graduteWork/DCSK_mod/Pulse Generator"
+) , TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 3 } , { 16 , 0 , TARGET_STRING (
 "graduteWork/DCSK_mod/Pulse Generator1" ) , TARGET_STRING ( "" ) , 0 , 0 , 0
-, 0 , 4 } , { 15 , 0 , TARGET_STRING ( "graduteWork/DCSK_mod/Product" ) ,
-TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 2 } , { 16 , 0 , TARGET_STRING (
+, 0 , 4 } , { 17 , 0 , TARGET_STRING ( "graduteWork/DCSK_mod/Product" ) ,
+TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 2 } , { 18 , 0 , TARGET_STRING (
 "graduteWork/DCSK_mod_1/Pulse Generator" ) , TARGET_STRING ( "" ) , 0 , 0 , 0
-, 0 , 5 } , { 17 , 0 , TARGET_STRING (
+, 0 , 5 } , { 19 , 0 , TARGET_STRING (
 "graduteWork/DCSK_mod_1/Pulse Generator1" ) , TARGET_STRING ( "" ) , 0 , 0 ,
-0 , 0 , 6 } , { 18 , 0 , TARGET_STRING ( "graduteWork/DCSK_mod_1/Product" ) ,
-TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 2 } , { 19 , 0 , TARGET_STRING (
+0 , 0 , 6 } , { 20 , 0 , TARGET_STRING ( "graduteWork/DCSK_mod_1/Product" ) ,
+TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 2 } , { 21 , 0 , TARGET_STRING (
 "graduteWork/Unipolar to Bipolar Converter1/Conversion1" ) , TARGET_STRING (
-"" ) , 0 , 0 , 0 , 0 , 1 } , { 0 , 0 , ( NULL ) , ( NULL ) , 0 , 0 , 0 , 0 ,
-0 } } ; static const rtwCAPI_BlockParameters rtBlockParameters [ ] = { { 20 ,
-TARGET_STRING ( "graduteWork/AWGN Channel" ) , TARGET_STRING ( "seed" ) , 2 ,
-0 , 0 } , { 21 , TARGET_STRING ( "graduteWork/AWGN Channel" ) , TARGET_STRING
-( "EbNodB" ) , 0 , 0 , 0 } , { 22 , TARGET_STRING (
-"graduteWork/AWGN Channel" ) , TARGET_STRING ( "Ps" ) , 0 , 0 , 0 } , { 23 ,
-TARGET_STRING ( "graduteWork/AWGN Channel1" ) , TARGET_STRING ( "seed" ) , 2
-, 0 , 0 } , { 24 , TARGET_STRING ( "graduteWork/AWGN Channel1" ) ,
-TARGET_STRING ( "EbNodB" ) , 0 , 0 , 0 } , { 25 , TARGET_STRING (
-"graduteWork/AWGN Channel1" ) , TARGET_STRING ( "Ps" ) , 0 , 0 , 0 } , { 26 ,
-TARGET_STRING ( "graduteWork/Gain2" ) , TARGET_STRING ( "Gain" ) , 3 , 0 , 2
-} , { 27 , TARGET_STRING ( "graduteWork/Variable Time Delay" ) ,
-TARGET_STRING ( "MaximumDelay" ) , 0 , 0 , 0 } , { 28 , TARGET_STRING (
-"graduteWork/Variable Time Delay" ) , TARGET_STRING ( "InitialOutput" ) , 0 ,
-0 , 0 } , { 29 , TARGET_STRING ( "graduteWork/Variable Time Delay1" ) ,
-TARGET_STRING ( "MaximumDelay" ) , 0 , 0 , 0 } , { 30 , TARGET_STRING (
-"graduteWork/Variable Time Delay1" ) , TARGET_STRING ( "InitialOutput" ) , 0
-, 0 , 0 } , { 31 , TARGET_STRING ( "graduteWork/APLL /Transfer Fcn" ) ,
-TARGET_STRING ( "A" ) , 0 , 1 , 0 } , { 32 , TARGET_STRING (
-"graduteWork/APLL /Transfer Fcn" ) , TARGET_STRING ( "C" ) , 0 , 2 , 0 } , {
-33 , TARGET_STRING ( "graduteWork/APLL /Transfer Fcn" ) , TARGET_STRING ( "D"
-) , 0 , 0 , 0 } , { 34 , TARGET_STRING ( "graduteWork/APLL /Transfer Fcn1" )
-, TARGET_STRING ( "A" ) , 0 , 0 , 0 } , { 35 , TARGET_STRING (
-"graduteWork/APLL /Transfer Fcn1" ) , TARGET_STRING ( "C" ) , 0 , 0 , 0 } , {
-36 , TARGET_STRING ( "graduteWork/AWGN Channel/Random Source" ) ,
-TARGET_STRING ( "MeanVal" ) , 0 , 0 , 0 } , { 37 , TARGET_STRING (
-"graduteWork/AWGN Channel/Random Source" ) , TARGET_STRING ( "VarianceRTP" )
-, 0 , 0 , 0 } , { 38 , TARGET_STRING (
+"" ) , 0 , 0 , 0 , 0 , 1 } , { 22 , 0 , TARGET_STRING (
+"graduteWork/APLL /Subsystem/Integrator" ) , TARGET_STRING ( "teta_e'" ) , 0
+, 0 , 0 , 0 , 0 } , { 23 , 0 , TARGET_STRING (
+"graduteWork/APLL /Subsystem/Integrator1" ) , TARGET_STRING ( "teta_e''" ) ,
+0 , 0 , 0 , 0 , 0 } , { 24 , 0 , TARGET_STRING (
+"graduteWork/APLL /Subsystem/Integrator2" ) , TARGET_STRING ( "teta_e'''" ) ,
+0 , 0 , 0 , 0 , 0 } , { 25 , 0 , TARGET_STRING (
+"graduteWork/APLL /Subsystem/Sum" ) , TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 ,
+0 } , { 26 , 0 , TARGET_STRING ( "graduteWork/APLL /Subsystem/Sum4" ) ,
+TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 0 } , { 0 , 0 , ( NULL ) , ( NULL ) ,
+0 , 0 , 0 , 0 , 0 } } ; static const rtwCAPI_BlockParameters
+rtBlockParameters [ ] = { { 27 , TARGET_STRING ( "graduteWork/AWGN Channel" )
+, TARGET_STRING ( "seed" ) , 2 , 0 , 0 } , { 28 , TARGET_STRING (
+"graduteWork/AWGN Channel" ) , TARGET_STRING ( "EbNodB" ) , 0 , 0 , 0 } , {
+29 , TARGET_STRING ( "graduteWork/AWGN Channel" ) , TARGET_STRING ( "Ps" ) ,
+0 , 0 , 0 } , { 30 , TARGET_STRING ( "graduteWork/AWGN Channel1" ) ,
+TARGET_STRING ( "seed" ) , 2 , 0 , 0 } , { 31 , TARGET_STRING (
+"graduteWork/AWGN Channel1" ) , TARGET_STRING ( "EbNodB" ) , 0 , 0 , 0 } , {
+32 , TARGET_STRING ( "graduteWork/AWGN Channel1" ) , TARGET_STRING ( "Ps" ) ,
+0 , 0 , 0 } , { 33 , TARGET_STRING ( "graduteWork/Gain2" ) , TARGET_STRING (
+"Gain" ) , 3 , 0 , 2 } , { 34 , TARGET_STRING (
+"graduteWork/Variable Time Delay" ) , TARGET_STRING ( "MaximumDelay" ) , 0 ,
+0 , 0 } , { 35 , TARGET_STRING ( "graduteWork/Variable Time Delay" ) ,
+TARGET_STRING ( "InitialOutput" ) , 0 , 0 , 0 } , { 36 , TARGET_STRING (
+"graduteWork/Variable Time Delay1" ) , TARGET_STRING ( "MaximumDelay" ) , 0 ,
+0 , 0 } , { 37 , TARGET_STRING ( "graduteWork/Variable Time Delay1" ) ,
+TARGET_STRING ( "InitialOutput" ) , 0 , 0 , 0 } , { 38 , TARGET_STRING (
+"graduteWork/APLL /Transfer Fcn" ) , TARGET_STRING ( "A" ) , 0 , 1 , 0 } , {
+39 , TARGET_STRING ( "graduteWork/APLL /Transfer Fcn" ) , TARGET_STRING ( "C"
+) , 0 , 2 , 0 } , { 40 , TARGET_STRING ( "graduteWork/APLL /Transfer Fcn" ) ,
+TARGET_STRING ( "D" ) , 0 , 0 , 0 } , { 41 , TARGET_STRING (
+"graduteWork/APLL /Transfer Fcn1" ) , TARGET_STRING ( "A" ) , 0 , 0 , 0 } , {
+42 , TARGET_STRING ( "graduteWork/APLL /Transfer Fcn1" ) , TARGET_STRING (
+"C" ) , 0 , 0 , 0 } , { 43 , TARGET_STRING (
+"graduteWork/AWGN Channel/Random Source" ) , TARGET_STRING ( "MeanVal" ) , 0
+, 0 , 0 } , { 44 , TARGET_STRING ( "graduteWork/AWGN Channel/Random Source" )
+, TARGET_STRING ( "VarianceRTP" ) , 0 , 0 , 0 } , { 45 , TARGET_STRING (
 "graduteWork/AWGN Channel1/Random Source" ) , TARGET_STRING ( "MeanVal" ) , 0
-, 0 , 0 } , { 39 , TARGET_STRING ( "graduteWork/AWGN Channel1/Random Source"
-) , TARGET_STRING ( "VarianceRTP" ) , 0 , 0 , 0 } , { 40 , TARGET_STRING (
+, 0 , 0 } , { 46 , TARGET_STRING ( "graduteWork/AWGN Channel1/Random Source"
+) , TARGET_STRING ( "VarianceRTP" ) , 0 , 0 , 0 } , { 47 , TARGET_STRING (
 "graduteWork/Compare To Zero/Constant" ) , TARGET_STRING ( "Value" ) , 0 , 0
-, 0 } , { 41 , TARGET_STRING ( "graduteWork/Compare To Zero1/Constant" ) ,
-TARGET_STRING ( "Value" ) , 0 , 0 , 0 } , { 42 , TARGET_STRING (
+, 0 } , { 48 , TARGET_STRING ( "graduteWork/Compare To Zero1/Constant" ) ,
+TARGET_STRING ( "Value" ) , 0 , 0 , 0 } , { 49 , TARGET_STRING (
 "graduteWork/DCSK_mod/Pulse Generator" ) , TARGET_STRING ( "Amplitude" ) , 0
-, 0 , 0 } , { 43 , TARGET_STRING ( "graduteWork/DCSK_mod/Pulse Generator" ) ,
-TARGET_STRING ( "PulseWidth" ) , 0 , 0 , 0 } , { 44 , TARGET_STRING (
+, 0 , 0 } , { 50 , TARGET_STRING ( "graduteWork/DCSK_mod/Pulse Generator" ) ,
+TARGET_STRING ( "PulseWidth" ) , 0 , 0 , 0 } , { 51 , TARGET_STRING (
 "graduteWork/DCSK_mod/Pulse Generator" ) , TARGET_STRING ( "PhaseDelay" ) , 0
-, 0 , 0 } , { 45 , TARGET_STRING ( "graduteWork/DCSK_mod/Pulse Generator1" )
-, TARGET_STRING ( "Amplitude" ) , 0 , 0 , 0 } , { 46 , TARGET_STRING (
+, 0 , 0 } , { 52 , TARGET_STRING ( "graduteWork/DCSK_mod/Pulse Generator1" )
+, TARGET_STRING ( "Amplitude" ) , 0 , 0 , 0 } , { 53 , TARGET_STRING (
 "graduteWork/DCSK_mod/Pulse Generator1" ) , TARGET_STRING ( "PulseWidth" ) ,
-0 , 0 , 0 } , { 47 , TARGET_STRING ( "graduteWork/DCSK_mod/Pulse Generator1"
-) , TARGET_STRING ( "PhaseDelay" ) , 0 , 0 , 0 } , { 48 , TARGET_STRING (
+0 , 0 , 0 } , { 54 , TARGET_STRING ( "graduteWork/DCSK_mod/Pulse Generator1"
+) , TARGET_STRING ( "PhaseDelay" ) , 0 , 0 , 0 } , { 55 , TARGET_STRING (
 "graduteWork/DCSK_mod/Variable Time Delay" ) , TARGET_STRING ( "MaximumDelay"
-) , 0 , 0 , 0 } , { 49 , TARGET_STRING (
+) , 0 , 0 , 0 } , { 56 , TARGET_STRING (
 "graduteWork/DCSK_mod/Variable Time Delay" ) , TARGET_STRING (
-"InitialOutput" ) , 0 , 0 , 0 } , { 50 , TARGET_STRING (
+"InitialOutput" ) , 0 , 0 , 0 } , { 57 , TARGET_STRING (
 "graduteWork/DCSK_mod_1/Pulse Generator" ) , TARGET_STRING ( "Amplitude" ) ,
-0 , 0 , 0 } , { 51 , TARGET_STRING ( "graduteWork/DCSK_mod_1/Pulse Generator"
-) , TARGET_STRING ( "PulseWidth" ) , 0 , 0 , 0 } , { 52 , TARGET_STRING (
+0 , 0 , 0 } , { 58 , TARGET_STRING ( "graduteWork/DCSK_mod_1/Pulse Generator"
+) , TARGET_STRING ( "PulseWidth" ) , 0 , 0 , 0 } , { 59 , TARGET_STRING (
 "graduteWork/DCSK_mod_1/Pulse Generator" ) , TARGET_STRING ( "PhaseDelay" ) ,
-0 , 0 , 0 } , { 53 , TARGET_STRING (
+0 , 0 , 0 } , { 60 , TARGET_STRING (
 "graduteWork/DCSK_mod_1/Pulse Generator1" ) , TARGET_STRING ( "Amplitude" ) ,
-0 , 0 , 0 } , { 54 , TARGET_STRING (
+0 , 0 , 0 } , { 61 , TARGET_STRING (
 "graduteWork/DCSK_mod_1/Pulse Generator1" ) , TARGET_STRING ( "PulseWidth" )
-, 0 , 0 , 0 } , { 55 , TARGET_STRING (
+, 0 , 0 , 0 } , { 62 , TARGET_STRING (
 "graduteWork/DCSK_mod_1/Pulse Generator1" ) , TARGET_STRING ( "PhaseDelay" )
-, 0 , 0 , 0 } , { 56 , TARGET_STRING (
+, 0 , 0 , 0 } , { 63 , TARGET_STRING (
 "graduteWork/DCSK_mod_1/Variable Time Delay" ) , TARGET_STRING (
-"MaximumDelay" ) , 0 , 0 , 0 } , { 57 , TARGET_STRING (
+"MaximumDelay" ) , 0 , 0 , 0 } , { 64 , TARGET_STRING (
 "graduteWork/DCSK_mod_1/Variable Time Delay" ) , TARGET_STRING (
-"InitialOutput" ) , 0 , 0 , 0 } , { 58 , TARGET_STRING (
+"InitialOutput" ) , 0 , 0 , 0 } , { 65 , TARGET_STRING (
 "graduteWork/Unipolar to Bipolar Converter1/Bias" ) , TARGET_STRING ( "Bias"
-) , 4 , 0 , 0 } , { 59 , TARGET_STRING (
+) , 4 , 0 , 0 } , { 66 , TARGET_STRING (
 "graduteWork/Unipolar to Bipolar Converter1/Gain" ) , TARGET_STRING ( "Gain"
-) , 4 , 0 , 0 } , { 60 , TARGET_STRING (
+) , 4 , 0 , 0 } , { 67 , TARGET_STRING (
 "graduteWork/Unipolar to Bipolar Converter1/Gain1" ) , TARGET_STRING ( "Gain"
-) , 4 , 0 , 0 } , { 61 , TARGET_STRING (
+) , 4 , 0 , 0 } , { 68 , TARGET_STRING (
 "graduteWork/Windowed Integrator/Discrete FIR Filter" ) , TARGET_STRING (
-"InitialStates" ) , 0 , 0 , 0 } , { 62 , TARGET_STRING (
+"InitialStates" ) , 0 , 0 , 0 } , { 69 , TARGET_STRING (
 "graduteWork/Windowed Integrator/Discrete FIR Filter" ) , TARGET_STRING (
-"Coefficients" ) , 0 , 3 , 0 } , { 63 , TARGET_STRING (
+"Coefficients" ) , 0 , 3 , 0 } , { 70 , TARGET_STRING (
 "graduteWork/Windowed Integrator1/Discrete FIR Filter" ) , TARGET_STRING (
-"InitialStates" ) , 0 , 0 , 0 } , { 64 , TARGET_STRING (
+"InitialStates" ) , 0 , 0 , 0 } , { 71 , TARGET_STRING (
 "graduteWork/Windowed Integrator1/Discrete FIR Filter" ) , TARGET_STRING (
-"Coefficients" ) , 0 , 3 , 0 } , { 0 , ( NULL ) , ( NULL ) , 0 , 0 , 0 } } ;
-static const rtwCAPI_ModelParameters rtModelParameters [ ] = { { 65 ,
-TARGET_STRING ( "K" ) , 0 , 0 , 0 } , { 66 , TARGET_STRING ( "K_p" ) , 0 , 0
-, 0 } , { 67 , TARGET_STRING ( "T_b" ) , 0 , 0 , 0 } , { 68 , TARGET_STRING (
-"w_r" ) , 0 , 0 , 0 } , { 0 , ( NULL ) , 0 , 0 , 0 } } ;
+"Coefficients" ) , 0 , 3 , 0 } , { 72 , TARGET_STRING (
+"graduteWork/APLL /Subsystem/Constant3" ) , TARGET_STRING ( "Value" ) , 0 , 0
+, 0 } , { 73 , TARGET_STRING ( "graduteWork/APLL /Subsystem/Integrator" ) ,
+TARGET_STRING ( "InitialCondition" ) , 0 , 0 , 0 } , { 74 , TARGET_STRING (
+"graduteWork/APLL /Subsystem/Integrator1" ) , TARGET_STRING (
+"InitialCondition" ) , 0 , 0 , 0 } , { 75 , TARGET_STRING (
+"graduteWork/APLL /Subsystem/Integrator2" ) , TARGET_STRING (
+"InitialCondition" ) , 0 , 0 , 0 } , { 0 , ( NULL ) , ( NULL ) , 0 , 0 , 0 }
+} ; static const rtwCAPI_ModelParameters rtModelParameters [ ] = { { 76 ,
+TARGET_STRING ( "G_0" ) , 0 , 0 , 0 } , { 77 , TARGET_STRING ( "K" ) , 0 , 0
+, 0 } , { 78 , TARGET_STRING ( "K_p" ) , 0 , 0 , 0 } , { 79 , TARGET_STRING (
+"K_v" ) , 0 , 0 , 0 } , { 80 , TARGET_STRING ( "T_b" ) , 0 , 0 , 0 } , { 81 ,
+TARGET_STRING ( "tau_p1" ) , 0 , 0 , 0 } , { 82 , TARGET_STRING ( "tau_p2" )
+, 0 , 0 , 0 } , { 83 , TARGET_STRING ( "tau_z1" ) , 0 , 0 , 0 } , { 84 ,
+TARGET_STRING ( "tau_z2" ) , 0 , 0 , 0 } , { 85 , TARGET_STRING ( "w_fr" ) ,
+0 , 0 , 0 } , { 86 , TARGET_STRING ( "w_r" ) , 0 , 0 , 0 } , { 0 , ( NULL ) ,
+0 , 0 , 0 } } ;
 #ifndef HOST_CAPI_BUILD
 static void * rtDataAddrMap [ ] = { & rtB . f4cfbddfyy , & rtB . ogevcwncpn ,
 & rtB . dwklrf454t , & rtB . mmtgqryjya , & rtB . elxpo0dj2v , & rtB .
-nn4m2ue31i , & rtB . euqkdgostn , & rtB . nsv3wpjgsy , & rtB . ngd20rywmn , &
-rtB . fmn00c1djj , & rtB . a4xfolphoz , & rtB . dq5pf1r1kq , & rtB .
-kiwdh5dnyr , & rtB . arogusvauw , & rtB . lonj3bmhdp , & rtB . m4x5j3wrne , &
-rtB . d2do4by5rh , & rtB . pvii1a3nq2 , & rtB . dtss3js3fd , & rtB .
-gr1lg4b5kc , & rtP . AWGNChannel_seed , & rtP . AWGNChannel_EbNodB , & rtP .
+ljlynbslzt , & rtB . euqkdgostn , & rtB . nsv3wpjgsy , & rtB . ewiw1v51he , &
+rtB . ngd20rywmn , & rtB . ehnfvnflet , & rtB . fmn00c1djj , & rtB .
+a4xfolphoz , & rtB . dq5pf1r1kq , & rtB . kiwdh5dnyr , & rtB . arogusvauw , &
+rtB . lonj3bmhdp , & rtB . m4x5j3wrne , & rtB . d2do4by5rh , & rtB .
+pvii1a3nq2 , & rtB . dtss3js3fd , & rtB . gr1lg4b5kc , & rtB . cn2zikh4hq , &
+rtB . gpaqvehfuh , & rtB . gpl5i1ekm1 , & rtB . oiiuuutb3e , & rtB .
+jc3rovnis0 , & rtP . AWGNChannel_seed , & rtP . AWGNChannel_EbNodB , & rtP .
 AWGNChannel_Ps , & rtP . AWGNChannel1_seed , & rtP . AWGNChannel1_EbNodB , &
 rtP . AWGNChannel1_Ps , & rtP . Gain2_Gain , & rtP .
 VariableTimeDelay_MaxDelay_dusxlj4oib , & rtP .
@@ -168,8 +193,11 @@ Gain_Gain , & rtP . Gain1_Gain , & rtP .
 DiscreteFIRFilter_InitialStates_bcwzpsb0dc , & rtP .
 DiscreteFIRFilter_Coefficients_mbm3buv1vn [ 0 ] , & rtP .
 DiscreteFIRFilter_InitialStates , & rtP . DiscreteFIRFilter_Coefficients [ 0
-] , & rtP . K , & rtP . K_p , & rtP . T_b , & rtP . w_r , } ; static int32_T
-* rtVarDimsAddrMap [ ] = { ( NULL ) } ;
+] , & rtP . Constant3_Value , & rtP . Integrator_IC , & rtP . Integrator1_IC
+, & rtP . Integrator2_IC , & rtP . G_0 , & rtP . K , & rtP . K_p , & rtP .
+K_v , & rtP . T_b , & rtP . tau_p1 , & rtP . tau_p2 , & rtP . tau_z1 , & rtP
+. tau_z2 , & rtP . w_fr , & rtP . w_r , } ; static int32_T * rtVarDimsAddrMap
+[ ] = { ( NULL ) } ;
 #endif
 static TARGET_CONST rtwCAPI_DataTypeMap rtDataTypeMap [ ] = { { "double" ,
 "real_T" , 0 , 0 , sizeof ( real_T ) , SS_DOUBLE , 0 , 0 , 0 } , {
@@ -204,11 +232,11 @@ void * ) & rtcapiStoredFloats [ 3 ] , ( const void * ) & rtcapiStoredFloats [
 rtcapiStoredFloats [ 3 ] , ( const void * ) & rtcapiStoredFloats [ 0 ] , 3 ,
 0 } , { ( const void * ) & rtcapiStoredFloats [ 3 ] , ( const void * ) &
 rtcapiStoredFloats [ 1 ] , 4 , 0 } } ; static rtwCAPI_ModelMappingStaticInfo
-mmiStatic = { { rtBlockSignals , 20 , ( NULL ) , 0 , ( NULL ) , 0 } , {
-rtBlockParameters , 45 , rtModelParameters , 4 } , { ( NULL ) , 0 } , {
+mmiStatic = { { rtBlockSignals , 27 , ( NULL ) , 0 , ( NULL ) , 0 } , {
+rtBlockParameters , 49 , rtModelParameters , 11 } , { ( NULL ) , 0 } , {
 rtDataTypeMap , rtDimensionMap , rtFixPtMap , rtElementMap , rtSampleTimeMap
-, rtDimensionArray } , "float" , { 1893728671U , 295662189U , 3154996807U ,
-3160123458U } , ( NULL ) , 0 , 0 } ; const rtwCAPI_ModelMappingStaticInfo *
+, rtDimensionArray } , "float" , { 1063512293U , 359948863U , 756139479U ,
+3755340480U } , ( NULL ) , 0 , 0 } ; const rtwCAPI_ModelMappingStaticInfo *
 graduteWork_GetCAPIStaticMap ( void ) { return & mmiStatic ; }
 #ifndef HOST_CAPI_BUILD
 void graduteWork_InitializeDataMapInfo ( void ) { rtwCAPI_SetVersion ( ( *

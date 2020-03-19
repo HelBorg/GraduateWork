@@ -193,11 +193,12 @@ muDoubleScalarLog ( ( real_T ) ( int32_T ) ( icng + jsr ) *
 : 2.776994 - x ; } } } } } y [ chan * nSamps + samp ] = mean [ meanLen > 1 ?
 chan : 0 ] + std * r ; } state [ chan << 1 ] = icng ; state [ ( chan << 1 ) +
 1 ] = jsr ; } } void MdlInitialize ( void ) { int32_T i ; rtX . fipgb2dv5w =
-0.0 ; rtDW . gidxstxvag = ( rtInf ) ; rtDW . hrgwoqkxsi = ( rtInf ) ; rtX .
-ewcbusxpqt [ 0 ] = 0.0 ; rtX . ewcbusxpqt [ 1 ] = 0.0 ; rtDW . hlvhcmlowo =
-rtP . AWGNChannel1_seed ; RandSrcInitState_GZ ( & rtDW . hlvhcmlowo , & rtDW
-. jbppeizd1x [ 0 ] , 1 ) ; for ( i = 0 ; i < 9 ; i ++ ) { rtDW . akitjtxsla [
-i ] = rtP . DiscreteFIRFilter_InitialStates ; } rtDW . bojqotfxnb = rtP .
+0.0 ; rtX . b0qben0a0r = rtP . Integrator_IC ; rtX . fek4nu5az1 = rtP .
+Integrator1_IC ; rtX . ckc0o45wge = rtP . Integrator2_IC ; rtX . ewcbusxpqt [
+0 ] = 0.0 ; rtX . ewcbusxpqt [ 1 ] = 0.0 ; rtDW . hlvhcmlowo = rtP .
+AWGNChannel1_seed ; RandSrcInitState_GZ ( & rtDW . hlvhcmlowo , & rtDW .
+jbppeizd1x [ 0 ] , 1 ) ; for ( i = 0 ; i < 9 ; i ++ ) { rtDW . akitjtxsla [ i
+] = rtP . DiscreteFIRFilter_InitialStates ; } rtDW . bojqotfxnb = rtP .
 AWGNChannel_seed ; RandSrcInitState_GZ ( & rtDW . bojqotfxnb , & rtDW .
 nc0dkv5gky [ 0 ] , 1 ) ; for ( i = 0 ; i < 9 ; i ++ ) { rtDW . hc5gld2nwz [ i
 ] = rtP . DiscreteFIRFilter_InitialStates_bcwzpsb0dc ; } } void MdlEnable (
@@ -231,33 +232,180 @@ ssSetErrorStatus ( rtS , errMsgCreatingOSigstreamManager ) ; return ; } } {
 bool externalInputIsInDatasetFormat = false ; void * pISigstreamManager =
 rt_GetISigstreamManager ( ) ; rtwISigstreamManagerGetInputIsInDatasetFormat (
 pISigstreamManager , & externalInputIsInDatasetFormat ) ; if (
-externalInputIsInDatasetFormat ) { } } { int_T j ; { real_T * pBuffer = (
-real_T * ) rt_TDelayCreateBuf ( 2 , 1024 , sizeof ( real_T ) ) ; if ( pBuffer
-== ( NULL ) ) { ssSetErrorStatus ( rtS , "vtdelay memory allocation error" )
-; return ; } rtDW . n3mlm25bwm . Tail = 0 ; rtDW . n3mlm25bwm . Head = 0 ;
-rtDW . n3mlm25bwm . Last = 0 ; rtDW . n3mlm25bwm . CircularBufSize = 1024 ;
-for ( j = 0 ; j < 1024 ; j ++ ) { pBuffer [ j ] = rtP .
-VariableTimeDelay1_InitOutput ; pBuffer [ 1024 + j ] = ssGetT ( rtS ) ; }
-rtDW . fqydmkxc1f . TUbufferPtrs [ 0 ] = ( void * ) & pBuffer [ 0 ] ; rtDW .
-fqydmkxc1f . TUbufferPtrs [ 1 ] = ( void * ) & pBuffer [ 1024 ] ; } } { int_T
-j ; { real_T * pBuffer = ( real_T * ) rt_TDelayCreateBuf ( 2 , 1024 , sizeof
-( real_T ) ) ; if ( pBuffer == ( NULL ) ) { ssSetErrorStatus ( rtS ,
-"vtdelay memory allocation error" ) ; return ; } rtDW . idh4wrqtoh . Tail = 0
-; rtDW . idh4wrqtoh . Head = 0 ; rtDW . idh4wrqtoh . Last = 0 ; rtDW .
-idh4wrqtoh . CircularBufSize = 1024 ; for ( j = 0 ; j < 1024 ; j ++ ) {
-pBuffer [ j ] = rtP . VariableTimeDelay_InitOutput ; pBuffer [ 1024 + j ] =
-ssGetT ( rtS ) ; } rtDW . h20mxqf3h4 . TUbufferPtrs [ 0 ] = ( void * ) &
-pBuffer [ 0 ] ; rtDW . h20mxqf3h4 . TUbufferPtrs [ 1 ] = ( void * ) & pBuffer
-[ 1024 ] ; } } rtDW . h4hok5wmjg = m5gq5dremb ( ) ; rtDW . j4s4odcqip = true
-; rtDW . gn3icq1q2g = 1144108930U ; rtDW . lbx1mtfejs = true ; rtDW .
-bizznvvjue [ 0 ] = 362436069U ; rtDW . bizznvvjue [ 1 ] = 521288629U ; rtDW .
-myt1d5w44r = true ; rtDW . eihuvcejq2 = true ; rtDW . cg25jop35d .
-isInitialized = 1 ; { int_T j ; { real_T * pBuffer = ( real_T * )
+externalInputIsInDatasetFormat ) { } } { void * slioCatalogue =
+rt_slioCatalogue ( ) ? rtwGetPointerFromUniquePtr ( rt_slioCatalogue ( ) ) :
+sdiGetSlioCatalogue ( rt_dataMapInfo . mmi . InstanceMap . fullPath ) ; if (
+! slioCatalogue || ! rtwDisableStreamingToRepository ( slioCatalogue ) ) { {
+{ sdiSignalSourceInfoU srcInfo ; sdiLabelU loggedName = sdiGetLabelFromChars
+( "" ) ; sdiLabelU origSigName = sdiGetLabelFromChars ( "" ) ; sdiLabelU
+propName = sdiGetLabelFromChars ( "" ) ; sdiLabelU blockPath =
+sdiGetLabelFromChars ( "graduteWork/APLL /Clock" ) ; sdiLabelU blockSID =
+sdiGetLabelFromChars ( "" ) ; sdiLabelU subPath = sdiGetLabelFromChars ( "" )
+; sdiDims sigDims ; sdiLabelU sigName = sdiGetLabelFromChars ( "" ) ;
+sdiAsyncRepoDataTypeHandle hDT = sdiAsyncRepoGetBuiltInDataTypeHandle (
+DATA_TYPE_DOUBLE ) ; { sdiComplexity sigComplexity = REAL ;
+sdiSampleTimeContinuity stCont = SAMPLE_TIME_CONTINUOUS ; int_T sigDimsArray
+[ 1 ] = { 1 } ; sigDims . nDims = 1 ; sigDims . dimensions = sigDimsArray ;
+srcInfo . numBlockPathElems = 1 ; srcInfo . fullBlockPath = ( sdiFullBlkPathU
+) & blockPath ; srcInfo . SID = ( sdiSignalIDU ) & blockSID ; srcInfo .
+subPath = subPath ; srcInfo . portIndex = 0 + 1 ; srcInfo . signalName =
+sigName ; srcInfo . sigSourceUUID = 0 ; rtDW . ioqxhb4lhw . AQHandles =
+sdiAsyncRepoCreateAsyncioQueue ( hDT , & srcInfo , rt_dataMapInfo . mmi .
+InstanceMap . fullPath , "7cbe8f85-f465-41c4-925b-f2d0a734e180" ,
+sigComplexity , & sigDims , DIMENSIONS_MODE_FIXED , stCont , "" ) ; if ( rtDW
+. ioqxhb4lhw . AQHandles ) { sdiSetSignalSampleTimeString ( rtDW . ioqxhb4lhw
+. AQHandles , "Continuous" , 0.0 , ssGetTFinal ( rtS ) ) ; sdiSetRunStartTime
+( rtDW . ioqxhb4lhw . AQHandles , ssGetTaskTime ( rtS , 1 ) ) ;
+sdiAsyncRepoSetSignalExportSettings ( rtDW . ioqxhb4lhw . AQHandles , 1 , 0 )
+; sdiAsyncRepoSetSignalExportName ( rtDW . ioqxhb4lhw . AQHandles ,
+loggedName , origSigName , propName ) ; } sdiFreeLabel ( sigName ) ;
+sdiFreeLabel ( loggedName ) ; sdiFreeLabel ( origSigName ) ; sdiFreeLabel (
+propName ) ; sdiFreeLabel ( blockPath ) ; sdiFreeLabel ( blockSID ) ;
+sdiFreeLabel ( subPath ) ; } } } } rtDW . ioqxhb4lhw . SlioLTF = ( NULL ) ; {
+void * treeVector = ( NULL ) ; void * accessor = ( NULL ) ; const void *
+signalDescriptor = ( NULL ) ; void * loggingInterval = ( NULL ) ; char *
+datasetName = "tmp_raccel_logsout" ; if ( slioCatalogue && rtwIsLoggingToFile
+( slioCatalogue ) ) { treeVector = rtwGetTreeVector ( ) ; { int_T
+sigDimsArray [ 1 ] = { 1 } ; rtwAddLeafNode ( 0 , "" , "linear" , 0 , (
+unsigned int * ) sigDimsArray , 1 , "double" , "" , "Continuous" , 0.0 ,
+ssGetTFinal ( rtS ) , treeVector ) ; } signalDescriptor =
+rtwGetSignalDescriptor ( treeVector , 1 , 1 , 0 , 1 , "" , "" ,
+rt_dataMapInfo . mmi . InstanceMap . fullPath , "graduteWork/APLL /Clock" , 1
+, 0 , slioCatalogue , ( NULL ) , 0 , ( NULL ) , 0 ) ; if ( ! rt_slioCatalogue
+( ) ) { sdiSlioIsLoggingSignal ( rt_dataMapInfo . mmi . InstanceMap .
+fullPath , "graduteWork/APLL /Clock" , 1 , "" ) ; } if ( rtwLoggingOverride (
+signalDescriptor , slioCatalogue ) ) { if ( ssGetRootSS ( rtS ) -> mdlInfo ->
+rtwLogInfo ) { loggingInterval = rtliGetLoggingInterval ( ssGetRootSS ( rtS )
+-> mdlInfo -> rtwLogInfo ) ; } else { loggingInterval =
+sdiGetLoggingIntervals ( rt_dataMapInfo . mmi . InstanceMap . fullPath ) ;
+datasetName = "" ; } accessor = rtwGetAccessor ( signalDescriptor ,
+loggingInterval ) ; rtwAddR2Client ( accessor , signalDescriptor ,
+slioCatalogue , datasetName , 1 ) ; rtDW . ioqxhb4lhw . SlioLTF = accessor ;
+} } } } { void * slioCatalogue = rt_slioCatalogue ( ) ?
+rtwGetPointerFromUniquePtr ( rt_slioCatalogue ( ) ) : sdiGetSlioCatalogue (
+rt_dataMapInfo . mmi . InstanceMap . fullPath ) ; if ( ! slioCatalogue || !
+rtwDisableStreamingToRepository ( slioCatalogue ) ) { { {
+sdiSignalSourceInfoU srcInfo ; sdiLabelU loggedName = sdiGetLabelFromChars (
+"" ) ; sdiLabelU origSigName = sdiGetLabelFromChars ( "" ) ; sdiLabelU
+propName = sdiGetLabelFromChars ( "" ) ; sdiLabelU blockPath =
+sdiGetLabelFromChars ( "graduteWork/APLL /Gain" ) ; sdiLabelU blockSID =
+sdiGetLabelFromChars ( "" ) ; sdiLabelU subPath = sdiGetLabelFromChars ( "" )
+; sdiDims sigDims ; sdiLabelU sigName = sdiGetLabelFromChars ( "" ) ;
+sdiAsyncRepoDataTypeHandle hDT = sdiAsyncRepoGetBuiltInDataTypeHandle (
+DATA_TYPE_DOUBLE ) ; { sdiComplexity sigComplexity = REAL ;
+sdiSampleTimeContinuity stCont = SAMPLE_TIME_CONTINUOUS ; int_T sigDimsArray
+[ 1 ] = { 1 } ; sigDims . nDims = 1 ; sigDims . dimensions = sigDimsArray ;
+srcInfo . numBlockPathElems = 1 ; srcInfo . fullBlockPath = ( sdiFullBlkPathU
+) & blockPath ; srcInfo . SID = ( sdiSignalIDU ) & blockSID ; srcInfo .
+subPath = subPath ; srcInfo . portIndex = 0 + 1 ; srcInfo . signalName =
+sigName ; srcInfo . sigSourceUUID = 0 ; rtDW . klz150kukh . AQHandles =
+sdiAsyncRepoCreateAsyncioQueue ( hDT , & srcInfo , rt_dataMapInfo . mmi .
+InstanceMap . fullPath , "2f07719d-feb5-45e0-9e4a-347d79c125ed" ,
+sigComplexity , & sigDims , DIMENSIONS_MODE_FIXED , stCont , "" ) ; if ( rtDW
+. klz150kukh . AQHandles ) { sdiSetSignalSampleTimeString ( rtDW . klz150kukh
+. AQHandles , "Continuous" , 0.0 , ssGetTFinal ( rtS ) ) ; sdiSetRunStartTime
+( rtDW . klz150kukh . AQHandles , ssGetTaskTime ( rtS , 1 ) ) ;
+sdiAsyncRepoSetSignalExportSettings ( rtDW . klz150kukh . AQHandles , 1 , 0 )
+; sdiAsyncRepoSetSignalExportName ( rtDW . klz150kukh . AQHandles ,
+loggedName , origSigName , propName ) ; } sdiFreeLabel ( sigName ) ;
+sdiFreeLabel ( loggedName ) ; sdiFreeLabel ( origSigName ) ; sdiFreeLabel (
+propName ) ; sdiFreeLabel ( blockPath ) ; sdiFreeLabel ( blockSID ) ;
+sdiFreeLabel ( subPath ) ; } } } } rtDW . klz150kukh . SlioLTF = ( NULL ) ; {
+void * treeVector = ( NULL ) ; void * accessor = ( NULL ) ; const void *
+signalDescriptor = ( NULL ) ; void * loggingInterval = ( NULL ) ; char *
+datasetName = "tmp_raccel_logsout" ; if ( slioCatalogue && rtwIsLoggingToFile
+( slioCatalogue ) ) { treeVector = rtwGetTreeVector ( ) ; { int_T
+sigDimsArray [ 1 ] = { 1 } ; rtwAddLeafNode ( 0 , "" , "linear" , 0 , (
+unsigned int * ) sigDimsArray , 1 , "double" , "" , "Continuous" , 0.0 ,
+ssGetTFinal ( rtS ) , treeVector ) ; } signalDescriptor =
+rtwGetSignalDescriptor ( treeVector , 1 , 1 , 0 , 1 , "" , "" ,
+rt_dataMapInfo . mmi . InstanceMap . fullPath , "graduteWork/APLL /Gain" , 1
+, 0 , slioCatalogue , ( NULL ) , 0 , ( NULL ) , 0 ) ; if ( ! rt_slioCatalogue
+( ) ) { sdiSlioIsLoggingSignal ( rt_dataMapInfo . mmi . InstanceMap .
+fullPath , "graduteWork/APLL /Gain" , 1 , "" ) ; } if ( rtwLoggingOverride (
+signalDescriptor , slioCatalogue ) ) { if ( ssGetRootSS ( rtS ) -> mdlInfo ->
+rtwLogInfo ) { loggingInterval = rtliGetLoggingInterval ( ssGetRootSS ( rtS )
+-> mdlInfo -> rtwLogInfo ) ; } else { loggingInterval =
+sdiGetLoggingIntervals ( rt_dataMapInfo . mmi . InstanceMap . fullPath ) ;
+datasetName = "" ; } accessor = rtwGetAccessor ( signalDescriptor ,
+loggingInterval ) ; rtwAddR2Client ( accessor , signalDescriptor ,
+slioCatalogue , datasetName , 1 ) ; rtDW . klz150kukh . SlioLTF = accessor ;
+} } } } { void * slioCatalogue = rt_slioCatalogue ( ) ?
+rtwGetPointerFromUniquePtr ( rt_slioCatalogue ( ) ) : sdiGetSlioCatalogue (
+rt_dataMapInfo . mmi . InstanceMap . fullPath ) ; if ( ! slioCatalogue || !
+rtwDisableStreamingToRepository ( slioCatalogue ) ) { { {
+sdiSignalSourceInfoU srcInfo ; sdiLabelU loggedName = sdiGetLabelFromChars (
+"" ) ; sdiLabelU origSigName = sdiGetLabelFromChars ( "" ) ; sdiLabelU
+propName = sdiGetLabelFromChars ( "" ) ; sdiLabelU blockPath =
+sdiGetLabelFromChars ( "graduteWork/APLL /Subsystem/Sum" ) ; sdiLabelU
+blockSID = sdiGetLabelFromChars ( "" ) ; sdiLabelU subPath =
+sdiGetLabelFromChars ( "" ) ; sdiDims sigDims ; sdiLabelU sigName =
+sdiGetLabelFromChars ( "" ) ; sdiAsyncRepoDataTypeHandle hDT =
+sdiAsyncRepoGetBuiltInDataTypeHandle ( DATA_TYPE_DOUBLE ) ; { sdiComplexity
+sigComplexity = REAL ; sdiSampleTimeContinuity stCont =
+SAMPLE_TIME_CONTINUOUS ; int_T sigDimsArray [ 1 ] = { 1 } ; sigDims . nDims =
+1 ; sigDims . dimensions = sigDimsArray ; srcInfo . numBlockPathElems = 1 ;
+srcInfo . fullBlockPath = ( sdiFullBlkPathU ) & blockPath ; srcInfo . SID = (
+sdiSignalIDU ) & blockSID ; srcInfo . subPath = subPath ; srcInfo . portIndex
+= 0 + 1 ; srcInfo . signalName = sigName ; srcInfo . sigSourceUUID = 0 ; rtDW
+. atsdrurf2g . AQHandles = sdiAsyncRepoCreateAsyncioQueue ( hDT , & srcInfo ,
+rt_dataMapInfo . mmi . InstanceMap . fullPath ,
+"a38807db-1bed-4564-9874-73bb45580d54" , sigComplexity , & sigDims ,
+DIMENSIONS_MODE_FIXED , stCont , "" ) ; if ( rtDW . atsdrurf2g . AQHandles )
+{ sdiSetSignalSampleTimeString ( rtDW . atsdrurf2g . AQHandles , "Continuous"
+, 0.0 , ssGetTFinal ( rtS ) ) ; sdiSetRunStartTime ( rtDW . atsdrurf2g .
+AQHandles , ssGetTaskTime ( rtS , 1 ) ) ; sdiAsyncRepoSetSignalExportSettings
+( rtDW . atsdrurf2g . AQHandles , 1 , 0 ) ; sdiAsyncRepoSetSignalExportName (
+rtDW . atsdrurf2g . AQHandles , loggedName , origSigName , propName ) ; }
+sdiFreeLabel ( sigName ) ; sdiFreeLabel ( loggedName ) ; sdiFreeLabel (
+origSigName ) ; sdiFreeLabel ( propName ) ; sdiFreeLabel ( blockPath ) ;
+sdiFreeLabel ( blockSID ) ; sdiFreeLabel ( subPath ) ; } } } } rtDW .
+atsdrurf2g . SlioLTF = ( NULL ) ; { void * treeVector = ( NULL ) ; void *
+accessor = ( NULL ) ; const void * signalDescriptor = ( NULL ) ; void *
+loggingInterval = ( NULL ) ; char * datasetName = "tmp_raccel_logsout" ; if (
+slioCatalogue && rtwIsLoggingToFile ( slioCatalogue ) ) { treeVector =
+rtwGetTreeVector ( ) ; { int_T sigDimsArray [ 1 ] = { 1 } ; rtwAddLeafNode (
+0 , "" , "linear" , 0 , ( unsigned int * ) sigDimsArray , 1 , "double" , "" ,
+"Continuous" , 0.0 , ssGetTFinal ( rtS ) , treeVector ) ; } signalDescriptor
+= rtwGetSignalDescriptor ( treeVector , 1 , 1 , 0 , 1 , "" , "" ,
+rt_dataMapInfo . mmi . InstanceMap . fullPath ,
+"graduteWork/APLL /Subsystem/Sum" , 1 , 0 , slioCatalogue , ( NULL ) , 0 , (
+NULL ) , 0 ) ; if ( ! rt_slioCatalogue ( ) ) { sdiSlioIsLoggingSignal (
+rt_dataMapInfo . mmi . InstanceMap . fullPath ,
+"graduteWork/APLL /Subsystem/Sum" , 1 , "" ) ; } if ( rtwLoggingOverride (
+signalDescriptor , slioCatalogue ) ) { if ( ssGetRootSS ( rtS ) -> mdlInfo ->
+rtwLogInfo ) { loggingInterval = rtliGetLoggingInterval ( ssGetRootSS ( rtS )
+-> mdlInfo -> rtwLogInfo ) ; } else { loggingInterval =
+sdiGetLoggingIntervals ( rt_dataMapInfo . mmi . InstanceMap . fullPath ) ;
+datasetName = "" ; } accessor = rtwGetAccessor ( signalDescriptor ,
+loggingInterval ) ; rtwAddR2Client ( accessor , signalDescriptor ,
+slioCatalogue , datasetName , 1 ) ; rtDW . atsdrurf2g . SlioLTF = accessor ;
+} } } } { int_T j ; { real_T * pBuffer = ( real_T * ) rt_TDelayCreateBuf ( 2
+, 1024 , sizeof ( real_T ) ) ; if ( pBuffer == ( NULL ) ) { ssSetErrorStatus
+( rtS , "vtdelay memory allocation error" ) ; return ; } rtDW . n3mlm25bwm .
+Tail = 0 ; rtDW . n3mlm25bwm . Head = 0 ; rtDW . n3mlm25bwm . Last = 0 ; rtDW
+. n3mlm25bwm . CircularBufSize = 1024 ; for ( j = 0 ; j < 1024 ; j ++ ) {
+pBuffer [ j ] = rtP . VariableTimeDelay1_InitOutput ; pBuffer [ 1024 + j ] =
+ssGetT ( rtS ) ; } rtDW . fqydmkxc1f . TUbufferPtrs [ 0 ] = ( void * ) &
+pBuffer [ 0 ] ; rtDW . fqydmkxc1f . TUbufferPtrs [ 1 ] = ( void * ) & pBuffer
+[ 1024 ] ; } } { int_T j ; { real_T * pBuffer = ( real_T * )
 rt_TDelayCreateBuf ( 2 , 1024 , sizeof ( real_T ) ) ; if ( pBuffer == ( NULL
 ) ) { ssSetErrorStatus ( rtS , "vtdelay memory allocation error" ) ; return ;
-} rtDW . aqjeiun535 . Tail = 0 ; rtDW . aqjeiun535 . Head = 0 ; rtDW .
-aqjeiun535 . Last = 0 ; rtDW . aqjeiun535 . CircularBufSize = 1024 ; for ( j
-= 0 ; j < 1024 ; j ++ ) { pBuffer [ j ] = rtP .
+} rtDW . idh4wrqtoh . Tail = 0 ; rtDW . idh4wrqtoh . Head = 0 ; rtDW .
+idh4wrqtoh . Last = 0 ; rtDW . idh4wrqtoh . CircularBufSize = 1024 ; for ( j
+= 0 ; j < 1024 ; j ++ ) { pBuffer [ j ] = rtP . VariableTimeDelay_InitOutput
+; pBuffer [ 1024 + j ] = ssGetT ( rtS ) ; } rtDW . h20mxqf3h4 . TUbufferPtrs
+[ 0 ] = ( void * ) & pBuffer [ 0 ] ; rtDW . h20mxqf3h4 . TUbufferPtrs [ 1 ] =
+( void * ) & pBuffer [ 1024 ] ; } } rtDW . h4hok5wmjg = m5gq5dremb ( ) ; rtDW
+. j4s4odcqip = true ; rtDW . gn3icq1q2g = 1144108930U ; rtDW . lbx1mtfejs =
+true ; rtDW . bizznvvjue [ 0 ] = 362436069U ; rtDW . bizznvvjue [ 1 ] =
+521288629U ; rtDW . myt1d5w44r = true ; rtDW . eihuvcejq2 = true ; rtDW .
+cg25jop35d . isInitialized = 1 ; { int_T j ; { real_T * pBuffer = ( real_T *
+) rt_TDelayCreateBuf ( 2 , 1024 , sizeof ( real_T ) ) ; if ( pBuffer == (
+NULL ) ) { ssSetErrorStatus ( rtS , "vtdelay memory allocation error" ) ;
+return ; } rtDW . aqjeiun535 . Tail = 0 ; rtDW . aqjeiun535 . Head = 0 ; rtDW
+. aqjeiun535 . Last = 0 ; rtDW . aqjeiun535 . CircularBufSize = 1024 ; for (
+j = 0 ; j < 1024 ; j ++ ) { pBuffer [ j ] = rtP .
 VariableTimeDelay_InitOutput_bhowtxsjbn ; pBuffer [ 1024 + j ] = ssGetT ( rtS
 ) ; } rtDW . pz2yc0tozj . TUbufferPtrs [ 0 ] = ( void * ) & pBuffer [ 0 ] ;
 rtDW . pz2yc0tozj . TUbufferPtrs [ 1 ] = ( void * ) & pBuffer [ 1024 ] ; } }
@@ -271,48 +419,65 @@ pBuffer [ j ] = rtP . VariableTimeDelay_InitOutput_nbhpmtp2jg ; pBuffer [
 void * ) & pBuffer [ 0 ] ; rtDW . lhx0lj4i05 . TUbufferPtrs [ 1 ] = ( void *
 ) & pBuffer [ 1024 ] ; } } MdlInitialize ( ) ; MdlEnable ( ) ; } void
 MdlOutputs ( int_T tid ) { real_T dxpj2fdqxb ; real_T om12obuajo ; real_T
-n0h4b1vry4 ; real_T degbbw0sgw ; real_T * lastU ; int32_T j ; real_T
-taskTimeV ; real_T ratio ; uint32_T numCycles ; boolean_T oop02asj1s ; real_T
-bhhm3g5dhx ; real_T b2ck0lyshm ; rtB . euqkdgostn = rtP . w_r * ssGetT ( rtS
-) ; rtB . a4xfolphoz = 0.0 ; rtB . a4xfolphoz += rtP . TransferFcn1_C * rtX .
-fipgb2dv5w ; rtB . ngd20rywmn = rtB . euqkdgostn - rtB . a4xfolphoz ; rtB .
-nsv3wpjgsy = rtP . K_p * muDoubleScalarSin ( rtB . ngd20rywmn ) ; if ( ( rtDW
-. gidxstxvag >= ssGetT ( rtS ) ) && ( rtDW . hrgwoqkxsi >= ssGetT ( rtS ) ) )
-{ rtB . nn4m2ue31i = 0.0 ; } else { taskTimeV = rtDW . gidxstxvag ; lastU = &
-rtDW . ewu2ifjblb ; if ( rtDW . gidxstxvag < rtDW . hrgwoqkxsi ) { if ( rtDW
-. hrgwoqkxsi < ssGetT ( rtS ) ) { taskTimeV = rtDW . hrgwoqkxsi ; lastU = &
-rtDW . hqrrzfrnm4 ; } } else { if ( rtDW . gidxstxvag >= ssGetT ( rtS ) ) {
-taskTimeV = rtDW . hrgwoqkxsi ; lastU = & rtDW . hqrrzfrnm4 ; } } rtB .
-nn4m2ue31i = ( rtB . nsv3wpjgsy - * lastU ) / ( ssGetT ( rtS ) - taskTimeV )
-; } rtB . fmn00c1djj = 0.0 ; rtB . fmn00c1djj += rtP . TransferFcn_C [ 0 ] *
+n0h4b1vry4 ; real_T degbbw0sgw ; int32_T j ; real_T b0qc5ozr4f ; real_T
+di3ximjehb ; uint32_T numCycles ; boolean_T oop02asj1s ; real_T bhhm3g5dhx ;
+real_T b2ck0lyshm ; rtB . ljlynbslzt = ssGetT ( rtS ) ; rtB . euqkdgostn =
+rtP . w_r * rtB . ljlynbslzt ; rtB . a4xfolphoz = 0.0 ; rtB . a4xfolphoz +=
+rtP . TransferFcn1_C * rtX . fipgb2dv5w ; rtB . ngd20rywmn = rtB . euqkdgostn
+- rtB . a4xfolphoz ; di3ximjehb = muDoubleScalarCos ( rtB . ngd20rywmn ) ;
+rtB . cn2zikh4hq = rtX . b0qben0a0r ; rtB . oiiuuutb3e = ( rtP . G_0 * rtP .
+tau_z1 * rtP . tau_z2 * di3ximjehb + rtP . tau_p1 ) + rtP . tau_p2 ; rtB .
+gpaqvehfuh = rtX . fek4nu5az1 ; rtB . gpl5i1ekm1 = rtX . ckc0o45wge ;
+b0qc5ozr4f = muDoubleScalarSin ( rtB . ngd20rywmn ) ; rtB . jc3rovnis0 = ( (
+( rtP . tau_z1 + rtP . tau_z2 ) * rtP . G_0 * di3ximjehb + rtP .
+Constant3_Value ) * rtB . cn2zikh4hq + rtB . oiiuuutb3e * rtB . gpaqvehfuh )
++ ( ( rtP . tau_p1 * rtP . tau_p2 * rtB . gpl5i1ekm1 - rtP . tau_z1 * rtP .
+tau_z2 * rtP . G_0 * ( rtB . cn2zikh4hq * rtB . cn2zikh4hq * b0qc5ozr4f ) ) +
+rtP . G_0 * b0qc5ozr4f ) ; if ( ssIsSampleHit ( rtS , 1 , 0 ) ) { { if ( (
+rtDW . ioqxhb4lhw . AQHandles || rtDW . ioqxhb4lhw . SlioLTF ) &&
+ssGetLogOutput ( rtS ) ) { sdiSlioSdiWriteSignal ( rtDW . ioqxhb4lhw .
+AQHandles , rtDW . ioqxhb4lhw . SlioLTF , 0 , ssGetTaskTime ( rtS , 1 ) , (
+char * ) & rtB . ljlynbslzt + 0 ) ; } } { if ( ( rtDW . klz150kukh .
+AQHandles || rtDW . klz150kukh . SlioLTF ) && ssGetLogOutput ( rtS ) ) {
+sdiSlioSdiWriteSignal ( rtDW . klz150kukh . AQHandles , rtDW . klz150kukh .
+SlioLTF , 0 , ssGetTaskTime ( rtS , 1 ) , ( char * ) & rtB . euqkdgostn + 0 )
+; } } } rtB . nsv3wpjgsy = rtP . K_p * muDoubleScalarSin ( rtB . ngd20rywmn )
+; rtB . fmn00c1djj = 0.0 ; rtB . fmn00c1djj += rtP . TransferFcn_C [ 0 ] *
 rtX . ewcbusxpqt [ 0 ] ; rtB . fmn00c1djj += rtP . TransferFcn_C [ 1 ] * rtX
 . ewcbusxpqt [ 1 ] ; rtB . fmn00c1djj += rtP . TransferFcn_D * rtB .
-nsv3wpjgsy ; taskTimeV = rtP . T_b / 2.0 ; { real_T * * uBuffer = ( real_T *
-* ) & rtDW . fqydmkxc1f . TUbufferPtrs [ 0 ] ; real_T * * tBuffer = ( real_T
-* * ) & rtDW . fqydmkxc1f . TUbufferPtrs [ 1 ] ; real_T simTime = ssGetT (
-rtS ) ; real_T appliedDelay ; appliedDelay = taskTimeV ; if ( appliedDelay >
-rtP . VariableTimeDelay1_MaxDelay ) { appliedDelay = rtP .
+nsv3wpjgsy ; rtB . ewiw1v51he = rtP . K_v * rtB . fmn00c1djj ; if (
+ssIsSampleHit ( rtS , 1 , 0 ) ) { { if ( ( rtDW . atsdrurf2g . AQHandles ||
+rtDW . atsdrurf2g . SlioLTF ) && ssGetLogOutput ( rtS ) ) {
+sdiSlioSdiWriteSignal ( rtDW . atsdrurf2g . AQHandles , rtDW . atsdrurf2g .
+SlioLTF , 0 , ssGetTaskTime ( rtS , 1 ) , ( char * ) & rtB . oiiuuutb3e + 0 )
+; } } } rtB . ehnfvnflet = rtB . ewiw1v51he + rtP . w_fr ; di3ximjehb = rtP .
+T_b / 2.0 ; { real_T * * uBuffer = ( real_T * * ) & rtDW . fqydmkxc1f .
+TUbufferPtrs [ 0 ] ; real_T * * tBuffer = ( real_T * * ) & rtDW . fqydmkxc1f
+. TUbufferPtrs [ 1 ] ; real_T simTime = ssGetT ( rtS ) ; real_T appliedDelay
+; appliedDelay = di3ximjehb ; if ( appliedDelay > rtP .
+VariableTimeDelay1_MaxDelay ) { appliedDelay = rtP .
 VariableTimeDelay1_MaxDelay ; } if ( appliedDelay < 0.0 ) { appliedDelay =
 0.0 ; } dxpj2fdqxb = rt_TDelayInterpolate ( simTime - appliedDelay , 0.0 , *
 tBuffer , * uBuffer , rtDW . n3mlm25bwm . CircularBufSize , & rtDW .
 n3mlm25bwm . Last , rtDW . n3mlm25bwm . Tail , rtDW . n3mlm25bwm . Head , rtP
 . VariableTimeDelay1_InitOutput , 1 , ( boolean_T ) ( ssIsMinorTimeStep ( rtS
 ) && ( ssGetTimeOfLastOutput ( rtS ) == ssGetT ( rtS ) ) ) ) ; } if (
-ssIsSampleHit ( rtS , 5 , 0 ) ) { taskTimeV = ssGetTaskTime ( rtS , 5 ) ; if
+ssIsSampleHit ( rtS , 5 , 0 ) ) { di3ximjehb = ssGetTaskTime ( rtS , 5 ) ; if
 ( ssGetTNextWasAdjusted ( rtS , 5 ) ) { rtDW . mcups15blx =
 _ssGetVarNextHitTime ( rtS , 2 ) ; } if ( rtDW . iik5cqzr1o != 0 ) { rtDW .
-iik5cqzr1o = 0 ; if ( taskTimeV >= rtP . PulseGenerator_PhaseDelay ) { ratio
-= ( taskTimeV - rtP . PulseGenerator_PhaseDelay ) / rtP . T_b ; numCycles = (
-uint32_T ) muDoubleScalarFloor ( ratio ) ; if ( muDoubleScalarAbs ( ( real_T
-) ( numCycles + 1U ) - ratio ) < DBL_EPSILON * ratio ) { numCycles ++ ; }
-rtDW . hxeldrnh31 = numCycles ; ratio = ( ( real_T ) numCycles * rtP . T_b +
-rtP . PulseGenerator_PhaseDelay ) + rtP . PulseGenerator_Duty * rtP . T_b /
-100.0 ; if ( taskTimeV < ratio ) { rtDW . naafmtzk4n = 1 ; rtDW . mcups15blx
-= ratio ; } else { rtDW . naafmtzk4n = 0 ; rtDW . mcups15blx = ( real_T ) (
-numCycles + 1U ) * rtP . T_b + rtP . PulseGenerator_PhaseDelay ; } } else {
+iik5cqzr1o = 0 ; if ( di3ximjehb >= rtP . PulseGenerator_PhaseDelay ) {
+b0qc5ozr4f = ( di3ximjehb - rtP . PulseGenerator_PhaseDelay ) / rtP . T_b ;
+numCycles = ( uint32_T ) muDoubleScalarFloor ( b0qc5ozr4f ) ; if (
+muDoubleScalarAbs ( ( real_T ) ( numCycles + 1U ) - b0qc5ozr4f ) <
+DBL_EPSILON * b0qc5ozr4f ) { numCycles ++ ; } rtDW . hxeldrnh31 = numCycles ;
+b0qc5ozr4f = ( ( real_T ) numCycles * rtP . T_b + rtP .
+PulseGenerator_PhaseDelay ) + rtP . PulseGenerator_Duty * rtP . T_b / 100.0 ;
+if ( di3ximjehb < b0qc5ozr4f ) { rtDW . naafmtzk4n = 1 ; rtDW . mcups15blx =
+b0qc5ozr4f ; } else { rtDW . naafmtzk4n = 0 ; rtDW . mcups15blx = ( real_T )
+( numCycles + 1U ) * rtP . T_b + rtP . PulseGenerator_PhaseDelay ; } } else {
 rtDW . hxeldrnh31 = rtP . PulseGenerator_PhaseDelay != 0.0 ? - 1 : 0 ; rtDW .
 naafmtzk4n = 0 ; rtDW . mcups15blx = rtP . PulseGenerator_PhaseDelay ; } }
-else { if ( rtDW . mcups15blx <= taskTimeV ) { if ( rtDW . naafmtzk4n == 1 )
+else { if ( rtDW . mcups15blx <= di3ximjehb ) { if ( rtDW . naafmtzk4n == 1 )
 { rtDW . naafmtzk4n = 0 ; rtDW . mcups15blx = ( real_T ) ( rtDW . hxeldrnh31
 + 1LL ) * rtP . T_b + rtP . PulseGenerator_PhaseDelay ; } else { rtDW .
 hxeldrnh31 ++ ; rtDW . naafmtzk4n = 1 ; rtDW . mcups15blx = ( rtP .
@@ -321,10 +486,10 @@ T_b ) + rtP . PulseGenerator_PhaseDelay ; } } } _ssSetVarNextHitTime ( rtS ,
 2 , rtDW . mcups15blx ) ; if ( rtDW . naafmtzk4n == 1 ) { rtB . arogusvauw =
 rtP . PulseGenerator_Amp ; } else { rtB . arogusvauw = 0.0 ; } } if (
 ssIsSampleHit ( rtS , 1 , 0 ) ) { rtB . m4x5j3wrne = 0.0 * rtB . arogusvauw ;
-} taskTimeV = rtP . T_b / 2.0 ; { real_T * * uBuffer = ( real_T * * ) & rtDW
+} di3ximjehb = rtP . T_b / 2.0 ; { real_T * * uBuffer = ( real_T * * ) & rtDW
 . h20mxqf3h4 . TUbufferPtrs [ 0 ] ; real_T * * tBuffer = ( real_T * * ) &
 rtDW . h20mxqf3h4 . TUbufferPtrs [ 1 ] ; real_T simTime = ssGetT ( rtS ) ;
-real_T appliedDelay ; appliedDelay = taskTimeV ; if ( appliedDelay > rtP .
+real_T appliedDelay ; appliedDelay = di3ximjehb ; if ( appliedDelay > rtP .
 VariableTimeDelay_MaxDelay ) { appliedDelay = rtP .
 VariableTimeDelay_MaxDelay ; } if ( appliedDelay < 0.0 ) { appliedDelay = 0.0
 ; } om12obuajo = rt_TDelayInterpolate ( simTime - appliedDelay , 0.0 , *
@@ -332,33 +497,34 @@ tBuffer , * uBuffer , rtDW . idh4wrqtoh . CircularBufSize , & rtDW .
 idh4wrqtoh . Last , rtDW . idh4wrqtoh . Tail , rtDW . idh4wrqtoh . Head , rtP
 . VariableTimeDelay_InitOutput , 1 , ( boolean_T ) ( ssIsMinorTimeStep ( rtS
 ) && ( ssGetTimeOfLastOutput ( rtS ) == ssGetT ( rtS ) ) ) ) ; } if (
-ssIsSampleHit ( rtS , 6 , 0 ) ) { taskTimeV = ssGetTaskTime ( rtS , 6 ) ; if
+ssIsSampleHit ( rtS , 6 , 0 ) ) { di3ximjehb = ssGetTaskTime ( rtS , 6 ) ; if
 ( ssGetTNextWasAdjusted ( rtS , 6 ) ) { rtDW . dpqogci02g =
 _ssGetVarNextHitTime ( rtS , 3 ) ; } if ( rtDW . o0aqq215bl != 0 ) { rtDW .
-o0aqq215bl = 0 ; if ( taskTimeV >= rtP . PulseGenerator1_PhaseDelay ) { ratio
-= ( taskTimeV - rtP . PulseGenerator1_PhaseDelay ) / rtP . T_b ; numCycles =
-( uint32_T ) muDoubleScalarFloor ( ratio ) ; if ( muDoubleScalarAbs ( (
-real_T ) ( numCycles + 1U ) - ratio ) < DBL_EPSILON * ratio ) { numCycles ++
-; } rtDW . jo3vvyegpy = numCycles ; ratio = ( ( real_T ) numCycles * rtP .
-T_b + rtP . PulseGenerator1_PhaseDelay ) + rtP . PulseGenerator1_Duty * rtP .
-T_b / 100.0 ; if ( taskTimeV < ratio ) { rtDW . cdqd414jgr = 1 ; rtDW .
-dpqogci02g = ratio ; } else { rtDW . cdqd414jgr = 0 ; rtDW . dpqogci02g = (
-real_T ) ( numCycles + 1U ) * rtP . T_b + rtP . PulseGenerator1_PhaseDelay ;
-} } else { rtDW . jo3vvyegpy = rtP . PulseGenerator1_PhaseDelay != 0.0 ? - 1
-: 0 ; rtDW . cdqd414jgr = 0 ; rtDW . dpqogci02g = rtP .
-PulseGenerator1_PhaseDelay ; } } else { if ( rtDW . dpqogci02g <= taskTimeV )
-{ if ( rtDW . cdqd414jgr == 1 ) { rtDW . cdqd414jgr = 0 ; rtDW . dpqogci02g =
-( real_T ) ( rtDW . jo3vvyegpy + 1LL ) * rtP . T_b + rtP .
+o0aqq215bl = 0 ; if ( di3ximjehb >= rtP . PulseGenerator1_PhaseDelay ) {
+b0qc5ozr4f = ( di3ximjehb - rtP . PulseGenerator1_PhaseDelay ) / rtP . T_b ;
+numCycles = ( uint32_T ) muDoubleScalarFloor ( b0qc5ozr4f ) ; if (
+muDoubleScalarAbs ( ( real_T ) ( numCycles + 1U ) - b0qc5ozr4f ) <
+DBL_EPSILON * b0qc5ozr4f ) { numCycles ++ ; } rtDW . jo3vvyegpy = numCycles ;
+b0qc5ozr4f = ( ( real_T ) numCycles * rtP . T_b + rtP .
+PulseGenerator1_PhaseDelay ) + rtP . PulseGenerator1_Duty * rtP . T_b / 100.0
+; if ( di3ximjehb < b0qc5ozr4f ) { rtDW . cdqd414jgr = 1 ; rtDW . dpqogci02g
+= b0qc5ozr4f ; } else { rtDW . cdqd414jgr = 0 ; rtDW . dpqogci02g = ( real_T
+) ( numCycles + 1U ) * rtP . T_b + rtP . PulseGenerator1_PhaseDelay ; } }
+else { rtDW . jo3vvyegpy = rtP . PulseGenerator1_PhaseDelay != 0.0 ? - 1 : 0
+; rtDW . cdqd414jgr = 0 ; rtDW . dpqogci02g = rtP .
+PulseGenerator1_PhaseDelay ; } } else { if ( rtDW . dpqogci02g <= di3ximjehb
+) { if ( rtDW . cdqd414jgr == 1 ) { rtDW . cdqd414jgr = 0 ; rtDW . dpqogci02g
+= ( real_T ) ( rtDW . jo3vvyegpy + 1LL ) * rtP . T_b + rtP .
 PulseGenerator1_PhaseDelay ; } else { rtDW . jo3vvyegpy ++ ; rtDW .
 cdqd414jgr = 1 ; rtDW . dpqogci02g = ( rtP . PulseGenerator1_Duty * rtP . T_b
 * 0.01 + ( real_T ) rtDW . jo3vvyegpy * rtP . T_b ) + rtP .
 PulseGenerator1_PhaseDelay ; } } } _ssSetVarNextHitTime ( rtS , 3 , rtDW .
 dpqogci02g ) ; if ( rtDW . cdqd414jgr == 1 ) { rtB . lonj3bmhdp = rtP .
 PulseGenerator1_Amp ; } else { rtB . lonj3bmhdp = 0.0 ; } } if (
-ssIsSampleHit ( rtS , 2 , 0 ) ) { taskTimeV = ( jmu25rrt32 ( ) > 0.5 ) ; rtB
-. gr1lg4b5kc = ( int8_T ) ( ( rtP . Gain_Gain * ( int32_T ) taskTimeV + rtP .
-Bias_Bias ) * rtP . Gain1_Gain ) ; } rtB . ogevcwncpn = ( om12obuajo * rtB .
-lonj3bmhdp * rtB . gr1lg4b5kc + rtB . m4x5j3wrne ) * rtP . K ; if (
+ssIsSampleHit ( rtS , 2 , 0 ) ) { di3ximjehb = ( jmu25rrt32 ( ) > 0.5 ) ; rtB
+. gr1lg4b5kc = ( int8_T ) ( ( rtP . Gain_Gain * ( int32_T ) di3ximjehb + rtP
+. Bias_Bias ) * rtP . Gain1_Gain ) ; } rtB . ogevcwncpn = ( om12obuajo * rtB
+. lonj3bmhdp * rtB . gr1lg4b5kc + rtB . m4x5j3wrne ) * rtP . K ; if (
 ssIsSampleHit ( rtS , 1 , 0 ) ) { RandSrc_GZ_D ( & bhhm3g5dhx , & rtP .
 RandomSource_MeanVal , 1 , & rtP . RandomSource_VarianceRTP , 1 , rtDW .
 jbppeizd1x , 1 , 1 ) ; rtDW . mq4qxkalfe = muDoubleScalarSqrt ( rtP .
@@ -366,29 +532,30 @@ AWGNChannel1_Ps / ( muDoubleScalarPower ( 10.0 , rtP . AWGNChannel1_EbNodB /
 10.0 ) * 0.0 ) ) ; rtB . kiwdh5dnyr = rtDW . mq4qxkalfe * bhhm3g5dhx ; rtB .
 kiwdh5dnyr /= 1.4142135623730951 ; rtB . kiwdh5dnyr += rtB . ogevcwncpn ; }
 rtB . mmtgqryjya = dxpj2fdqxb * rtB . kiwdh5dnyr ; if ( ssIsSampleHit ( rtS ,
-2 , 0 ) ) { taskTimeV = rtB . mmtgqryjya * rtP .
+2 , 0 ) ) { di3ximjehb = rtB . mmtgqryjya * rtP .
 DiscreteFIRFilter_Coefficients [ 0 ] ; for ( j = 0 ; j < 9 ; j ++ ) {
-taskTimeV += rtP . DiscreteFIRFilter_Coefficients [ j + 1 ] * rtDW .
+di3ximjehb += rtP . DiscreteFIRFilter_Coefficients [ j + 1 ] * rtDW .
 akitjtxsla [ j ] ; } for ( j = 7 ; j >= 0 ; j -- ) { rtDW . akitjtxsla [ j +
 1 ] = rtDW . akitjtxsla [ j ] ; } rtDW . akitjtxsla [ 0 ] = rtB . mmtgqryjya
-; oop02asj1s = ( taskTimeV > rtP . Constant_Value ) ; } if ( ssIsSampleHit (
-rtS , 3 , 0 ) ) { taskTimeV = ssGetTaskTime ( rtS , 3 ) ; if (
+; oop02asj1s = ( di3ximjehb > rtP . Constant_Value ) ; } if ( ssIsSampleHit (
+rtS , 3 , 0 ) ) { di3ximjehb = ssGetTaskTime ( rtS , 3 ) ; if (
 ssGetTNextWasAdjusted ( rtS , 3 ) ) { rtDW . jzz1wckozg =
 _ssGetVarNextHitTime ( rtS , 0 ) ; } if ( rtDW . a0nnxzfeub != 0 ) { rtDW .
-a0nnxzfeub = 0 ; if ( taskTimeV >= rtP . PulseGenerator_PhaseDelay_atvywtkvwr
-) { ratio = ( taskTimeV - rtP . PulseGenerator_PhaseDelay_atvywtkvwr ) / rtP
-. T_b ; numCycles = ( uint32_T ) muDoubleScalarFloor ( ratio ) ; if (
-muDoubleScalarAbs ( ( real_T ) ( numCycles + 1U ) - ratio ) < DBL_EPSILON *
-ratio ) { numCycles ++ ; } rtDW . fqzlq5lwky = numCycles ; ratio = ( ( real_T
-) numCycles * rtP . T_b + rtP . PulseGenerator_PhaseDelay_atvywtkvwr ) + rtP
-. PulseGenerator_Duty_bgi2ymfa2r * rtP . T_b / 100.0 ; if ( taskTimeV < ratio
-) { rtDW . bqbxgzjswl = 1 ; rtDW . jzz1wckozg = ratio ; } else { rtDW .
-bqbxgzjswl = 0 ; rtDW . jzz1wckozg = ( real_T ) ( numCycles + 1U ) * rtP .
-T_b + rtP . PulseGenerator_PhaseDelay_atvywtkvwr ; } } else { rtDW .
-fqzlq5lwky = rtP . PulseGenerator_PhaseDelay_atvywtkvwr != 0.0 ? - 1 : 0 ;
-rtDW . bqbxgzjswl = 0 ; rtDW . jzz1wckozg = rtP .
+a0nnxzfeub = 0 ; if ( di3ximjehb >= rtP .
+PulseGenerator_PhaseDelay_atvywtkvwr ) { b0qc5ozr4f = ( di3ximjehb - rtP .
+PulseGenerator_PhaseDelay_atvywtkvwr ) / rtP . T_b ; numCycles = ( uint32_T )
+muDoubleScalarFloor ( b0qc5ozr4f ) ; if ( muDoubleScalarAbs ( ( real_T ) (
+numCycles + 1U ) - b0qc5ozr4f ) < DBL_EPSILON * b0qc5ozr4f ) { numCycles ++ ;
+} rtDW . fqzlq5lwky = numCycles ; b0qc5ozr4f = ( ( real_T ) numCycles * rtP .
+T_b + rtP . PulseGenerator_PhaseDelay_atvywtkvwr ) + rtP .
+PulseGenerator_Duty_bgi2ymfa2r * rtP . T_b / 100.0 ; if ( di3ximjehb <
+b0qc5ozr4f ) { rtDW . bqbxgzjswl = 1 ; rtDW . jzz1wckozg = b0qc5ozr4f ; }
+else { rtDW . bqbxgzjswl = 0 ; rtDW . jzz1wckozg = ( real_T ) ( numCycles +
+1U ) * rtP . T_b + rtP . PulseGenerator_PhaseDelay_atvywtkvwr ; } } else {
+rtDW . fqzlq5lwky = rtP . PulseGenerator_PhaseDelay_atvywtkvwr != 0.0 ? - 1 :
+0 ; rtDW . bqbxgzjswl = 0 ; rtDW . jzz1wckozg = rtP .
 PulseGenerator_PhaseDelay_atvywtkvwr ; } } else { if ( rtDW . jzz1wckozg <=
-taskTimeV ) { if ( rtDW . bqbxgzjswl == 1 ) { rtDW . bqbxgzjswl = 0 ; rtDW .
+di3ximjehb ) { if ( rtDW . bqbxgzjswl == 1 ) { rtDW . bqbxgzjswl = 0 ; rtDW .
 jzz1wckozg = ( real_T ) ( rtDW . fqzlq5lwky + 1LL ) * rtP . T_b + rtP .
 PulseGenerator_PhaseDelay_atvywtkvwr ; } else { rtDW . fqzlq5lwky ++ ; rtDW .
 bqbxgzjswl = 1 ; rtDW . jzz1wckozg = ( rtP . PulseGenerator_Duty_bgi2ymfa2r *
@@ -397,10 +564,10 @@ PulseGenerator_PhaseDelay_atvywtkvwr ; } } } _ssSetVarNextHitTime ( rtS , 0 ,
 rtDW . jzz1wckozg ) ; if ( rtDW . bqbxgzjswl == 1 ) { rtB . d2do4by5rh = rtP
 . PulseGenerator_Amp_dpc1bd5pjc ; } else { rtB . d2do4by5rh = 0.0 ; } } if (
 ssIsSampleHit ( rtS , 1 , 0 ) ) { rtB . dtss3js3fd = 0.0 * rtB . d2do4by5rh ;
-} taskTimeV = rtP . T_b / 2.0 ; { real_T * * uBuffer = ( real_T * * ) & rtDW
+} di3ximjehb = rtP . T_b / 2.0 ; { real_T * * uBuffer = ( real_T * * ) & rtDW
 . pz2yc0tozj . TUbufferPtrs [ 0 ] ; real_T * * tBuffer = ( real_T * * ) &
 rtDW . pz2yc0tozj . TUbufferPtrs [ 1 ] ; real_T simTime = ssGetT ( rtS ) ;
-real_T appliedDelay ; appliedDelay = taskTimeV ; if ( appliedDelay > rtP .
+real_T appliedDelay ; appliedDelay = di3ximjehb ; if ( appliedDelay > rtP .
 VariableTimeDelay_MaxDelay_m2225lzqk4 ) { appliedDelay = rtP .
 VariableTimeDelay_MaxDelay_m2225lzqk4 ; } if ( appliedDelay < 0.0 ) {
 appliedDelay = 0.0 ; } n0h4b1vry4 = rt_TDelayInterpolate ( simTime -
@@ -409,23 +576,23 @@ CircularBufSize , & rtDW . aqjeiun535 . Last , rtDW . aqjeiun535 . Tail ,
 rtDW . aqjeiun535 . Head , rtP . VariableTimeDelay_InitOutput_bhowtxsjbn , 1
 , ( boolean_T ) ( ssIsMinorTimeStep ( rtS ) && ( ssGetTimeOfLastOutput ( rtS
 ) == ssGetT ( rtS ) ) ) ) ; } if ( ssIsSampleHit ( rtS , 4 , 0 ) ) {
-taskTimeV = ssGetTaskTime ( rtS , 4 ) ; if ( ssGetTNextWasAdjusted ( rtS , 4
+di3ximjehb = ssGetTaskTime ( rtS , 4 ) ; if ( ssGetTNextWasAdjusted ( rtS , 4
 ) ) { rtDW . dgchxx4fdz = _ssGetVarNextHitTime ( rtS , 1 ) ; } if ( rtDW .
-etw2p5ad3w != 0 ) { rtDW . etw2p5ad3w = 0 ; if ( taskTimeV >= rtP .
-PulseGenerator1_PhaseDelay_mbbvjh54k2 ) { ratio = ( taskTimeV - rtP .
+etw2p5ad3w != 0 ) { rtDW . etw2p5ad3w = 0 ; if ( di3ximjehb >= rtP .
+PulseGenerator1_PhaseDelay_mbbvjh54k2 ) { b0qc5ozr4f = ( di3ximjehb - rtP .
 PulseGenerator1_PhaseDelay_mbbvjh54k2 ) / rtP . T_b ; numCycles = ( uint32_T
-) muDoubleScalarFloor ( ratio ) ; if ( muDoubleScalarAbs ( ( real_T ) (
-numCycles + 1U ) - ratio ) < DBL_EPSILON * ratio ) { numCycles ++ ; } rtDW .
-kdiskgiof3 = numCycles ; ratio = ( ( real_T ) numCycles * rtP . T_b + rtP .
-PulseGenerator1_PhaseDelay_mbbvjh54k2 ) + rtP .
-PulseGenerator1_Duty_g4r4ampfv4 * rtP . T_b / 100.0 ; if ( taskTimeV < ratio
-) { rtDW . ow1mt1w4wu = 1 ; rtDW . dgchxx4fdz = ratio ; } else { rtDW .
-ow1mt1w4wu = 0 ; rtDW . dgchxx4fdz = ( real_T ) ( numCycles + 1U ) * rtP .
-T_b + rtP . PulseGenerator1_PhaseDelay_mbbvjh54k2 ; } } else { rtDW .
-kdiskgiof3 = rtP . PulseGenerator1_PhaseDelay_mbbvjh54k2 != 0.0 ? - 1 : 0 ;
-rtDW . ow1mt1w4wu = 0 ; rtDW . dgchxx4fdz = rtP .
+) muDoubleScalarFloor ( b0qc5ozr4f ) ; if ( muDoubleScalarAbs ( ( real_T ) (
+numCycles + 1U ) - b0qc5ozr4f ) < DBL_EPSILON * b0qc5ozr4f ) { numCycles ++ ;
+} rtDW . kdiskgiof3 = numCycles ; b0qc5ozr4f = ( ( real_T ) numCycles * rtP .
+T_b + rtP . PulseGenerator1_PhaseDelay_mbbvjh54k2 ) + rtP .
+PulseGenerator1_Duty_g4r4ampfv4 * rtP . T_b / 100.0 ; if ( di3ximjehb <
+b0qc5ozr4f ) { rtDW . ow1mt1w4wu = 1 ; rtDW . dgchxx4fdz = b0qc5ozr4f ; }
+else { rtDW . ow1mt1w4wu = 0 ; rtDW . dgchxx4fdz = ( real_T ) ( numCycles +
+1U ) * rtP . T_b + rtP . PulseGenerator1_PhaseDelay_mbbvjh54k2 ; } } else {
+rtDW . kdiskgiof3 = rtP . PulseGenerator1_PhaseDelay_mbbvjh54k2 != 0.0 ? - 1
+: 0 ; rtDW . ow1mt1w4wu = 0 ; rtDW . dgchxx4fdz = rtP .
 PulseGenerator1_PhaseDelay_mbbvjh54k2 ; } } else { if ( rtDW . dgchxx4fdz <=
-taskTimeV ) { if ( rtDW . ow1mt1w4wu == 1 ) { rtDW . ow1mt1w4wu = 0 ; rtDW .
+di3ximjehb ) { if ( rtDW . ow1mt1w4wu == 1 ) { rtDW . ow1mt1w4wu = 0 ; rtDW .
 dgchxx4fdz = ( real_T ) ( rtDW . kdiskgiof3 + 1LL ) * rtP . T_b + rtP .
 PulseGenerator1_PhaseDelay_mbbvjh54k2 ; } else { rtDW . kdiskgiof3 ++ ; rtDW
 . ow1mt1w4wu = 1 ; rtDW . dgchxx4fdz = ( rtP .
@@ -441,11 +608,11 @@ RandomSource_VarianceRTP_kadmsoaacu , 1 , rtDW . nc0dkv5gky , 1 , 1 ) ; rtDW
 . p0fceflrke = muDoubleScalarSqrt ( rtP . AWGNChannel_Ps / (
 muDoubleScalarPower ( 10.0 , rtP . AWGNChannel_EbNodB / 10.0 ) * 0.0 ) ) ;
 rtB . dq5pf1r1kq = rtDW . p0fceflrke * b2ck0lyshm ; rtB . dq5pf1r1kq /=
-1.4142135623730951 ; rtB . dq5pf1r1kq += rtB . f4cfbddfyy ; } taskTimeV = rtP
-. T_b / 2.0 ; { real_T * * uBuffer = ( real_T * * ) & rtDW . lhx0lj4i05 .
+1.4142135623730951 ; rtB . dq5pf1r1kq += rtB . f4cfbddfyy ; } di3ximjehb =
+rtP . T_b / 2.0 ; { real_T * * uBuffer = ( real_T * * ) & rtDW . lhx0lj4i05 .
 TUbufferPtrs [ 0 ] ; real_T * * tBuffer = ( real_T * * ) & rtDW . lhx0lj4i05
 . TUbufferPtrs [ 1 ] ; real_T simTime = ssGetT ( rtS ) ; real_T appliedDelay
-; appliedDelay = taskTimeV ; if ( appliedDelay > rtP .
+; appliedDelay = di3ximjehb ; if ( appliedDelay > rtP .
 VariableTimeDelay_MaxDelay_dusxlj4oib ) { appliedDelay = rtP .
 VariableTimeDelay_MaxDelay_dusxlj4oib ; } if ( appliedDelay < 0.0 ) {
 appliedDelay = 0.0 ; } degbbw0sgw = rt_TDelayInterpolate ( simTime -
@@ -462,13 +629,7 @@ DiscreteFIRFilter_Coefficients_mbm3buv1vn [ j + 1 ] * rtDW . hc5gld2nwz [ j ]
 hc5gld2nwz [ j ] ; } rtDW . hc5gld2nwz [ 0 ] = rtB . elxpo0dj2v ; rtB .
 dwklrf454t = ( uint16_T ) ( ( ( uint32_T ) ( b2ck0lyshm > rtP .
 Constant_Value_b4h3lxdqw5 ) + oop02asj1s ) * rtP . Gain2_Gain ) ; }
-UNUSED_PARAMETER ( tid ) ; } void MdlUpdate ( int_T tid ) { real_T * lastU ;
-if ( rtDW . gidxstxvag == ( rtInf ) ) { rtDW . gidxstxvag = ssGetT ( rtS ) ;
-lastU = & rtDW . ewu2ifjblb ; } else if ( rtDW . hrgwoqkxsi == ( rtInf ) ) {
-rtDW . hrgwoqkxsi = ssGetT ( rtS ) ; lastU = & rtDW . hqrrzfrnm4 ; } else if
-( rtDW . gidxstxvag < rtDW . hrgwoqkxsi ) { rtDW . gidxstxvag = ssGetT ( rtS
-) ; lastU = & rtDW . ewu2ifjblb ; } else { rtDW . hrgwoqkxsi = ssGetT ( rtS )
-; lastU = & rtDW . hqrrzfrnm4 ; } * lastU = rtB . nsv3wpjgsy ; { real_T * *
+UNUSED_PARAMETER ( tid ) ; } void MdlUpdate ( int_T tid ) { { real_T * *
 uBuffer = ( real_T * * ) & rtDW . fqydmkxc1f . TUbufferPtrs [ 0 ] ; real_T *
 * tBuffer = ( real_T * * ) & rtDW . fqydmkxc1f . TUbufferPtrs [ 1 ] ; real_T
 * * xBuffer = ( NULL ) ; real_T simTime = ssGetT ( rtS ) ; rtDW . n3mlm25bwm
@@ -524,26 +685,37 @@ rtB . dq5pf1r1kq ; } UNUSED_PARAMETER ( tid ) ; } void MdlUpdateTID7 ( int_T
 tid ) { UNUSED_PARAMETER ( tid ) ; } void MdlDerivatives ( void ) { XDot *
 _rtXdot ; _rtXdot = ( ( XDot * ) ssGetdX ( rtS ) ) ; _rtXdot -> fipgb2dv5w =
 0.0 ; _rtXdot -> fipgb2dv5w += rtP . TransferFcn1_A * rtX . fipgb2dv5w ;
-_rtXdot -> fipgb2dv5w += rtB . fmn00c1djj ; _rtXdot -> ewcbusxpqt [ 0 ] = 0.0
-; _rtXdot -> ewcbusxpqt [ 0 ] += rtP . TransferFcn_A [ 0 ] * rtX . ewcbusxpqt
-[ 0 ] ; _rtXdot -> ewcbusxpqt [ 1 ] = 0.0 ; _rtXdot -> ewcbusxpqt [ 0 ] +=
-rtP . TransferFcn_A [ 1 ] * rtX . ewcbusxpqt [ 1 ] ; _rtXdot -> ewcbusxpqt [
-1 ] += rtX . ewcbusxpqt [ 0 ] ; _rtXdot -> ewcbusxpqt [ 0 ] += rtB .
-nsv3wpjgsy ; { } { } { } { } } void MdlProjection ( void ) { } void
-MdlTerminate ( void ) { rt_TDelayFreeBuf ( rtDW . fqydmkxc1f . TUbufferPtrs [
-0 ] ) ; rt_TDelayFreeBuf ( rtDW . h20mxqf3h4 . TUbufferPtrs [ 0 ] ) ;
+_rtXdot -> fipgb2dv5w += rtB . ehnfvnflet ; _rtXdot -> b0qben0a0r = rtB .
+ngd20rywmn ; _rtXdot -> fek4nu5az1 = rtB . cn2zikh4hq ; _rtXdot -> ckc0o45wge
+= rtB . gpaqvehfuh ; _rtXdot -> ewcbusxpqt [ 0 ] = 0.0 ; _rtXdot ->
+ewcbusxpqt [ 0 ] += rtP . TransferFcn_A [ 0 ] * rtX . ewcbusxpqt [ 0 ] ;
+_rtXdot -> ewcbusxpqt [ 1 ] = 0.0 ; _rtXdot -> ewcbusxpqt [ 0 ] += rtP .
+TransferFcn_A [ 1 ] * rtX . ewcbusxpqt [ 1 ] ; _rtXdot -> ewcbusxpqt [ 1 ] +=
+rtX . ewcbusxpqt [ 0 ] ; _rtXdot -> ewcbusxpqt [ 0 ] += rtB . nsv3wpjgsy ; {
+} { } { } { } } void MdlProjection ( void ) { } void MdlTerminate ( void ) {
+rt_TDelayFreeBuf ( rtDW . fqydmkxc1f . TUbufferPtrs [ 0 ] ) ;
+rt_TDelayFreeBuf ( rtDW . h20mxqf3h4 . TUbufferPtrs [ 0 ] ) ;
 rt_TDelayFreeBuf ( rtDW . pz2yc0tozj . TUbufferPtrs [ 0 ] ) ;
-rt_TDelayFreeBuf ( rtDW . lhx0lj4i05 . TUbufferPtrs [ 0 ] ) ; if (
+rt_TDelayFreeBuf ( rtDW . lhx0lj4i05 . TUbufferPtrs [ 0 ] ) ; { if ( rtDW .
+ioqxhb4lhw . AQHandles ) { sdiTerminateStreaming ( & rtDW . ioqxhb4lhw .
+AQHandles ) ; } if ( rtDW . ioqxhb4lhw . SlioLTF ) {
+rtwDestructAccessorPointer ( rtDW . ioqxhb4lhw . SlioLTF ) ; } } { if ( rtDW
+. klz150kukh . AQHandles ) { sdiTerminateStreaming ( & rtDW . klz150kukh .
+AQHandles ) ; } if ( rtDW . klz150kukh . SlioLTF ) {
+rtwDestructAccessorPointer ( rtDW . klz150kukh . SlioLTF ) ; } } { if ( rtDW
+. atsdrurf2g . AQHandles ) { sdiTerminateStreaming ( & rtDW . atsdrurf2g .
+AQHandles ) ; } if ( rtDW . atsdrurf2g . SlioLTF ) {
+rtwDestructAccessorPointer ( rtDW . atsdrurf2g . SlioLTF ) ; } } if (
 rt_slioCatalogue ( ) != ( NULL ) ) { void * * slioCatalogueAddr =
 rt_slioCatalogueAddr ( ) ; rtwSaveDatasetsToMatFile (
 rtwGetPointerFromUniquePtr ( rt_slioCatalogue ( ) ) ,
 rt_GetMatSigstreamLoggingFileName ( ) ) ; rtwTerminateSlioCatalogue (
 slioCatalogueAddr ) ; * slioCatalogueAddr = NULL ; } } void
-MdlInitializeSizes ( void ) { ssSetNumContStates ( rtS , 3 ) ;
+MdlInitializeSizes ( void ) { ssSetNumContStates ( rtS , 6 ) ;
 ssSetNumPeriodicContStates ( rtS , 0 ) ; ssSetNumY ( rtS , 0 ) ; ssSetNumU (
 rtS , 0 ) ; ssSetDirectFeedThrough ( rtS , 0 ) ; ssSetNumSampleTimes ( rtS ,
-7 ) ; ssSetNumBlocks ( rtS , 61 ) ; ssSetNumBlockIO ( rtS , 21 ) ;
-ssSetNumBlockParams ( rtS , 69 ) ; } void MdlInitializeSampleTimes ( void ) {
+7 ) ; ssSetNumBlocks ( rtS , 86 ) ; ssSetNumBlockIO ( rtS , 28 ) ;
+ssSetNumBlockParams ( rtS , 80 ) ; } void MdlInitializeSampleTimes ( void ) {
 ssSetSampleTime ( rtS , 0 , 0.0 ) ; ssSetSampleTime ( rtS , 1 , 0.0 ) ;
 ssSetSampleTime ( rtS , 2 , 40.0 ) ; ssSetSampleTime ( rtS , 3 , - 2.0 ) ;
 ssSetSampleTime ( rtS , 4 , - 2.0 ) ; ssSetSampleTime ( rtS , 5 , - 2.0 ) ;
@@ -551,9 +723,9 @@ ssSetSampleTime ( rtS , 6 , - 2.0 ) ; ssSetOffsetTime ( rtS , 0 , 0.0 ) ;
 ssSetOffsetTime ( rtS , 1 , 1.0 ) ; ssSetOffsetTime ( rtS , 2 , 0.0 ) ;
 ssSetOffsetTime ( rtS , 3 , 0.0 ) ; ssSetOffsetTime ( rtS , 4 , 1.0 ) ;
 ssSetOffsetTime ( rtS , 5 , 2.0 ) ; ssSetOffsetTime ( rtS , 6 , 3.0 ) ; }
-void raccel_set_checksum ( ) { ssSetChecksumVal ( rtS , 0 , 1893728671U ) ;
-ssSetChecksumVal ( rtS , 1 , 295662189U ) ; ssSetChecksumVal ( rtS , 2 ,
-3154996807U ) ; ssSetChecksumVal ( rtS , 3 , 3160123458U ) ; }
+void raccel_set_checksum ( ) { ssSetChecksumVal ( rtS , 0 , 1063512293U ) ;
+ssSetChecksumVal ( rtS , 1 , 359948863U ) ; ssSetChecksumVal ( rtS , 2 ,
+756139479U ) ; ssSetChecksumVal ( rtS , 3 , 3755340480U ) ; }
 #if defined(_MSC_VER)
 #pragma optimize( "", off )
 #endif
@@ -605,22 +777,22 @@ rtliSetLogYSignalPtrs ( ssGetRTWLogInfo ( rtS ) , ( NULL ) ) ; } { static
 struct _ssStatesInfo2 statesInfo2 ; ssSetStatesInfo2 ( rtS , & statesInfo2 )
 ; } { static ssPeriodicStatesInfo periodicStatesInfo ;
 ssSetPeriodicStatesInfo ( rtS , & periodicStatesInfo ) ; } { static
-ssSolverInfo slvrInfo ; static boolean_T contStatesDisabled [ 3 ] ; static
-real_T absTol [ 3 ] = { 1.0E-6 , 1.0E-6 , 1.0E-6 } ; static uint8_T
-absTolControl [ 3 ] = { 0U , 0U , 0U } ; ssSetSolverRelTol ( rtS , 0.001 ) ;
-ssSetStepSize ( rtS , 0.0 ) ; ssSetMinStepSize ( rtS , 0.0 ) ;
-ssSetMaxNumMinSteps ( rtS , - 1 ) ; ssSetMinStepViolatedError ( rtS , 0 ) ;
-ssSetMaxStepSize ( rtS , 4.0 ) ; ssSetSolverMaxOrder ( rtS , - 1 ) ;
-ssSetSolverRefineFactor ( rtS , 1 ) ; ssSetOutputTimes ( rtS , ( NULL ) ) ;
-ssSetNumOutputTimes ( rtS , 0 ) ; ssSetOutputTimesOnly ( rtS , 0 ) ;
-ssSetOutputTimesIndex ( rtS , 0 ) ; ssSetZCCacheNeedsReset ( rtS , 0 ) ;
-ssSetDerivCacheNeedsReset ( rtS , 0 ) ; ssSetNumNonContDerivSigInfos ( rtS ,
-0 ) ; ssSetNonContDerivSigInfos ( rtS , ( NULL ) ) ; ssSetSolverInfo ( rtS ,
-& slvrInfo ) ; ssSetSolverName ( rtS , "VariableStepAuto" ) ;
-ssSetVariableStepSolver ( rtS , 1 ) ; ssSetSolverConsistencyChecking ( rtS ,
-0 ) ; ssSetSolverAdaptiveZcDetection ( rtS , 0 ) ;
-ssSetSolverRobustResetMethod ( rtS , 0 ) ; ssSetAbsTolVector ( rtS , absTol )
-; ssSetAbsTolControlVector ( rtS , absTolControl ) ;
+ssSolverInfo slvrInfo ; static boolean_T contStatesDisabled [ 6 ] ; static
+real_T absTol [ 6 ] = { 1.0E-6 , 1.0E-6 , 1.0E-6 , 1.0E-6 , 1.0E-6 , 1.0E-6 }
+; static uint8_T absTolControl [ 6 ] = { 0U , 0U , 0U , 0U , 0U , 0U } ;
+ssSetSolverRelTol ( rtS , 0.001 ) ; ssSetStepSize ( rtS , 0.0 ) ;
+ssSetMinStepSize ( rtS , 0.0 ) ; ssSetMaxNumMinSteps ( rtS , - 1 ) ;
+ssSetMinStepViolatedError ( rtS , 0 ) ; ssSetMaxStepSize ( rtS , 4.0 ) ;
+ssSetSolverMaxOrder ( rtS , - 1 ) ; ssSetSolverRefineFactor ( rtS , 1 ) ;
+ssSetOutputTimes ( rtS , ( NULL ) ) ; ssSetNumOutputTimes ( rtS , 0 ) ;
+ssSetOutputTimesOnly ( rtS , 0 ) ; ssSetOutputTimesIndex ( rtS , 0 ) ;
+ssSetZCCacheNeedsReset ( rtS , 0 ) ; ssSetDerivCacheNeedsReset ( rtS , 0 ) ;
+ssSetNumNonContDerivSigInfos ( rtS , 0 ) ; ssSetNonContDerivSigInfos ( rtS ,
+( NULL ) ) ; ssSetSolverInfo ( rtS , & slvrInfo ) ; ssSetSolverName ( rtS ,
+"VariableStepAuto" ) ; ssSetVariableStepSolver ( rtS , 1 ) ;
+ssSetSolverConsistencyChecking ( rtS , 0 ) ; ssSetSolverAdaptiveZcDetection (
+rtS , 0 ) ; ssSetSolverRobustResetMethod ( rtS , 0 ) ; ssSetAbsTolVector (
+rtS , absTol ) ; ssSetAbsTolControlVector ( rtS , absTolControl ) ;
 ssSetSolverAbsTol_Obsolete ( rtS , absTol ) ;
 ssSetSolverAbsTolControl_Obsolete ( rtS , absTolControl ) ;
 ssSetSolverStateProjection ( rtS , 0 ) ; ssSetSolverMassMatrixType ( rtS , (
@@ -634,9 +806,9 @@ ssSetSolverShapePreserveControl ( rtS , 2 ) ; ssSetTNextTid ( rtS , INT_MIN )
 ; ssSetTNext ( rtS , rtMinusInf ) ; ssSetSolverNeedsReset ( rtS ) ;
 ssSetNumNonsampledZCs ( rtS , 0 ) ; ssSetContStateDisabled ( rtS ,
 contStatesDisabled ) ; ssSetSolverMaxConsecutiveMinStep ( rtS , 1 ) ; }
-ssSetChecksumVal ( rtS , 0 , 1893728671U ) ; ssSetChecksumVal ( rtS , 1 ,
-295662189U ) ; ssSetChecksumVal ( rtS , 2 , 3154996807U ) ; ssSetChecksumVal
-( rtS , 3 , 3160123458U ) ; { static const sysRanDType rtAlwaysEnabled =
+ssSetChecksumVal ( rtS , 0 , 1063512293U ) ; ssSetChecksumVal ( rtS , 1 ,
+359948863U ) ; ssSetChecksumVal ( rtS , 2 , 756139479U ) ; ssSetChecksumVal (
+rtS , 3 , 3755340480U ) ; { static const sysRanDType rtAlwaysEnabled =
 SUBSYS_RAN_BC_ENABLE ; static RTWExtModeInfo rt_ExtModeInfo ; static const
 sysRanDType * systemRan [ 3 ] ; gblRTWExtModeInfo = & rt_ExtModeInfo ;
 ssSetRTWExtModeInfo ( rtS , & rt_ExtModeInfo ) ;

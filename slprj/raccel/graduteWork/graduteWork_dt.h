@@ -19,18 +19,18 @@ char_T * rtDataTypeNames [ ] = { "real_T" , "real32_T" , "int8_T" , "uint8_T"
 "fcn_call_T" , "int_T" , "pointer_T" , "action_T" , "timer_uint32_pair_T" ,
 "uint8_T" , "uint16_T" , "pbicqml2dv" , "int64_T" , "int64_T" , "uint64_T" }
 ; static DataTypeTransition rtBTransitions [ ] = { { ( char_T * ) ( & rtB .
-euqkdgostn ) , 0 , 0 , 21 } , { ( char_T * ) ( & rtB . dwklrf454t ) , 15 , 0
-, 1 } , { ( char_T * ) ( & rtDW . akitjtxsla [ 0 ] ) , 0 , 0 , 28 } , { (
+ljlynbslzt ) , 0 , 0 , 28 } , { ( char_T * ) ( & rtB . dwklrf454t ) , 15 , 0
+, 1 } , { ( char_T * ) ( & rtDW . akitjtxsla [ 0 ] ) , 0 , 0 , 24 } , { (
 char_T * ) ( & rtDW . hxeldrnh31 ) , 17 , 0 , 4 } , { ( char_T * ) ( & rtDW .
 ezdyi0bpjz . modelTStart ) , 0 , 0 , 4 } , { ( char_T * ) ( & rtDW .
-hewqvudxrp . LoggedData ) , 11 , 0 , 12 } , { ( char_T * ) ( & rtDW .
+fpgdvluwcr . LoggedData [ 0 ] ) , 11 , 0 , 18 } , { ( char_T * ) ( & rtDW .
 iik5cqzr1o ) , 6 , 0 , 8 } , { ( char_T * ) ( & rtDW . hlvhcmlowo ) , 7 , 0 ,
 635 } , { ( char_T * ) ( & rtDW . cg25jop35d ) , 16 , 0 , 1 } , { ( char_T *
 ) ( & rtDW . n3mlm25bwm . Tail ) , 10 , 0 , 4 } , { ( char_T * ) ( & rtDW .
 eihuvcejq2 ) , 8 , 0 , 5 } } ; static DataTypeTransitionTable rtBTransTable =
 { 11U , rtBTransitions } ; static DataTypeTransition rtPTransitions [ ] = { {
-( char_T * ) ( & rtP . K ) , 0 , 0 , 10 } , { ( char_T * ) ( & rtP .
+( char_T * ) ( & rtP . G_0 ) , 0 , 0 , 17 } , { ( char_T * ) ( & rtP .
 AWGNChannel1_seed ) , 7 , 0 , 2 } , { ( char_T * ) ( & rtP . Constant_Value )
-, 0 , 0 , 53 } , { ( char_T * ) ( & rtP . Gain_Gain ) , 6 , 0 , 3 } , { (
+, 0 , 0 , 57 } , { ( char_T * ) ( & rtP . Gain_Gain ) , 6 , 0 , 3 } , { (
 char_T * ) ( & rtP . Gain2_Gain ) , 14 , 0 , 1 } } ; static
 DataTypeTransitionTable rtPTransTable = { 5U , rtPTransitions } ;
