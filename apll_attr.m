@@ -1,7 +1,4 @@
-function dxdt = apll_attr(t, x)
-
-omega_0 = 0;
-G_0 = db2mag(94);
+function dxdt = apll_attr(G_0, omega_0, t, x)
 
 tau_p1 = 1.65*1e-3;
 tau_p2 = 1.65*1e-3;
