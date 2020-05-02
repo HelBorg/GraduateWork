@@ -1,32 +1,22 @@
-tEnd = 1000; 
-tStep = 0.1; 
-nFactors = 100; 
+omega_0 = 0;
+G_0 = db2mag(97.7);
+tScale = 1e-3;
+x1Scale = 1e-1;
+initPoint = [-pi/4*x1Scale, pi/4*x1Scale*tScale, -pi/4*tScale^2*x1Scale];
+
+tStep = 0.01*tScale; 
+nFactors = 1000; 
 LEsTol = 1e-2;
+
+% init_cond = zeros(5, 23);
+% init_cond(:, 2) = 0;
+
 
 acc = 1e-6; RelTol = acc; AbsTol = acc;
 odeSolverOptions = odeset('RelTol', RelTol, 'AbsTol', AbsTol);
-% check = [ 94.6, 0; 94.0, 0; 88.6, 0; 87.3, 0 ; ...
-%     95.8, 700; 95.2, 700; 91.7, 700; 89.8, 700; 88.6, 700; 83.8, 700; ...
-%     97.7, 1400; 97.3, 1400; 96.8, 1400; 96.3, 1400; 95.8, 1400];
-op = 1;
 
-for i=1:5
-    omega_0 = 0;
-%     G_0 = db2mag(check(i,1));
-%    omega_0 = 0;
-  G_0 = 94;
-    initPoint = [-pi/4, pi/4, -pi/4];
+tic
+[~, LEs, svdIterations] = computeLEs(@(t, x) apll_attr_nondim_1(G_0, omega_0, t, x), initPoint, tStep, nFactors, LEsTol, odeSolverOptions);
+toc
 
-    tic
-    [~, LEs, svdIterations] = computeLEs(@(t, x) apll_attr(G_0, omega_0, t, x), initPoint, tStep, nFactors, LEsTol, odeSolverOptions);
-    toc
-
-    disp(omega_0);
-    disp(G_0);
-    disp(LEs(end, :));
-%     check(i, 3:5) = LEs(end, :);
-    
-%     rer(op,1:3) = LEs(end,:);
-%     rer(op,4) = G_0;
-%     op = op+1;
-end
+disp(LEs(end, :));

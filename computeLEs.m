@@ -42,16 +42,6 @@ for iFactor = 1 : nFactors
     plot3(extOdeSolution(:,1),extOdeSolution(:,2),extOdeSolution(:,3) );
                                                        
     currInitPoint = extOdeSolution(end, 1 : dimOde);
-%     disp(fundMat(1,1,nFactors-iFactor+1));
-%     disp(fundMat(1,2,nFactors-iFactor+1));
-%     disp(fundMat(1,3,nFactors-iFactor+1));
-%     disp(fundMat(2,1,nFactors-iFactor+1));
-%     disp(fundMat(2,2,nFactors-iFactor+1));
-%     disp(fundMat(2,3,nFactors-iFactor+1));
-%     disp(fundMat(3,1,nFactors-iFactor+1));
-%     disp(fundMat(3,2,nFactors-iFactor+1));
-%     disp(fundMat(3,3,nFactors-iFactor+1));
-%     disp(iFactor);
 
     currInitFundMatrix = eye(dimOde);
     

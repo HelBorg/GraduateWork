@@ -10,13 +10,16 @@ kf = 7.8; % gain of the modulator -> so that RF bandwidth of the FM-DCSK siganl 
 Tau = 100; %time of generation
 
 
-T_b = 2; % period for dcsk
-T = T_b;
+T = 0.001;
 apll_const();
 
 K = 3;
+B = 200;
 
 R = 9;
+
+
+
 
 
 
