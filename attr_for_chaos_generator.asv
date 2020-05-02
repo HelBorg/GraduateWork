@@ -8,8 +8,8 @@ tStep = 0.1/tScale;
 nFactors = 1000; 
 LEsTol = 1e-2;
 
-% init_cond = zeros(5, 23);
-% init_cond(:, 2) = 0;
+init_cond = zeros(5, 23);
+init_cond(:, 2) = 0;
 
 
 acc = 1e-6; RelTol = acc; AbsTol = acc;
